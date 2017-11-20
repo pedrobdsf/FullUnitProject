@@ -42,7 +42,7 @@ public class OneVOneController implements Observer, EventHandler<ActionEvent> {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	public OneVOneView getView() {
 		return view;
 	}

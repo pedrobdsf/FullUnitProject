@@ -10,14 +10,15 @@ package strategies;
 public class Strategy {
 
 	protected Strategy opponent;
-	protected String choice;
+	protected String currChoice;
+	protected String lastChoice;
 
 	public Strategy() {
-		choice = "";
+		lastChoice = null;
 	}
-	
-	public String choose() {
-		return "";
+
+	public void choose() {
+		currChoice = null;
 	}
 
 	public void setOpponent(Strategy opponent) {
@@ -28,8 +29,16 @@ public class Strategy {
 		return opponent;
 	}
 
-	public String getChoice() {
-		return choice;
+	public String getCurrChoice() {
+		return currChoice;
+	}
+
+	public void setLastChoice() {
+		lastChoice = currChoice;
+	}
+
+	public String getLastChoice() {
+		return lastChoice;
 	}
 
 }

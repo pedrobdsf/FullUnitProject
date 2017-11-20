@@ -7,8 +7,10 @@ import java.util.Observable;
 
 import javax.swing.JOptionPane;
 
-import strategies.AlwaysCooperateStrategy;
-import strategies.AlwaysDefectStrategy;
+import strategies.AlwaysCooperate;
+import strategies.AlwaysDefect;
+import strategies.Random;
+import strategies.TitForTat;
 
 /**
  * @author Pedro Freire
@@ -27,9 +29,13 @@ public class OneVOneManager extends Observable {
 			agent1.setOpponent(agent2);
 			agent2.setOpponent(agent1);
 			for (int round = 1; round <= numOfRounds; round++) {
-				matrix.evaluate(agent1.getStrat().choose(), agent2.getStrat().choose());
+				agent1.getStrat().choose();
+				agent2.getStrat().choose();
+				matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
 				agent1.incUtility(matrix.getResult1());
 				agent2.incUtility(matrix.getResult2());
+				agent1.getStrat().setLastChoice();
+				agent2.getStrat().setLastChoice();
 			}
 		} else {
 			JOptionPane.showMessageDialog(null, "Select two agents.", "Warning", JOptionPane.WARNING_MESSAGE);
@@ -39,19 +45,23 @@ public class OneVOneManager extends Observable {
 	private Agent stringToAgent(String strat) {
 		switch (strat) {
 		case "Always Defect":
-			return new Agent(new AlwaysDefectStrategy());
+			return new Agent(new AlwaysDefect());
 		case "Always Cooperate":
-			return new Agent(new AlwaysCooperateStrategy());
+			return new Agent(new AlwaysCooperate());
+		case "Random":
+			return new Agent(new Random());
+		case "Tit For Tat":
+			return new Agent(new TitForTat());
 		default:
 			JOptionPane.showMessageDialog(null, "Invalid agent selection.", "Error", JOptionPane.ERROR_MESSAGE);
 			return null;
 		}
 	}
-	
+
 	public Agent getAgent1() {
 		return agent1;
 	}
-	
+
 	public Agent getAgent2() {
 		return agent2;
 	}

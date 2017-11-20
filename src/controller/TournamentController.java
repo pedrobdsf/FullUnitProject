@@ -8,19 +8,19 @@ import java.util.Observer;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import model.TournementManager;
-import view.TournementView;
+import model.TournamentManager;
+import view.TournamentView;
 
 /**
  * @author Pedro Freire
  *
  */
-public class TournementController implements Observer, EventHandler<ActionEvent> {
+public class TournamentController implements Observer, EventHandler<ActionEvent> {
 
-	private TournementView view;
-	private TournementManager manager;
+	private TournamentView view;
+	private TournamentManager manager;
 
-	public TournementController(TournementManager manager, TournementView view) {
+	public TournamentController(TournamentManager manager, TournamentView view) {
 		this.manager = manager;
 		this.view = view;
 		view.addHandlers(this);
@@ -30,9 +30,9 @@ public class TournementController implements Observer, EventHandler<ActionEvent>
 	@Override
 	public void handle(ActionEvent event) {
 		if (event.getSource() == view.getPlayButton()) {
-			System.out.println("pressed play");
+			view.clearResultField();
 			manager.runGame(view.getAgentSelectList(), Integer.parseInt(view.getRoundsField().getText()));
-			for (int num = 0; num < manager.getAgentList().length - 1; num++) {
+			for (int num = 0; num < manager.getAgentList().length; num++) {
 				if (manager.getAgentList()[num] != null) {
 					view.setResultField(String.valueOf(manager.getAgentList()[num].getUtility()), num);
 				}

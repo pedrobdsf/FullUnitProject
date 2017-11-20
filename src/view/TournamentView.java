@@ -14,9 +14,9 @@ import javafx.scene.control.TextField;
  * @author Pedro Freire
  *
  */
-public class TournementView {
+public class TournamentView {
 
-	private static TournementView instance = null;
+	private static TournamentView instance = null;
 
 	@FXML
 	private ChoiceBox<String> agentSelect1;
@@ -67,34 +67,34 @@ public class TournementView {
 	public void initialize() {
 		instance = this;
 		agentSelect1.getItems().removeAll(agentSelect1.getItems());
-		agentSelect1.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect1.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect1.getSelectionModel().select("");
 		agentSelect2.getItems().removeAll(agentSelect2.getItems());
-		agentSelect2.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect2.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect2.getSelectionModel().select("");
 		agentSelect3.getItems().removeAll(agentSelect3.getItems());
-		agentSelect3.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect3.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect3.getSelectionModel().select("");
 		agentSelect4.getItems().removeAll(agentSelect4.getItems());
-		agentSelect4.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect4.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect4.getSelectionModel().select("");
 		agentSelect5.getItems().removeAll(agentSelect5.getItems());
-		agentSelect5.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect5.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect5.getSelectionModel().select("");
 		agentSelect6.getItems().removeAll(agentSelect6.getItems());
-		agentSelect6.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect6.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect6.getSelectionModel().select("");
 		agentSelect7.getItems().removeAll(agentSelect7.getItems());
-		agentSelect7.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect7.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect7.getSelectionModel().select("");
 		agentSelect8.getItems().removeAll(agentSelect8.getItems());
-		agentSelect8.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect8.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect8.getSelectionModel().select("");
 		agentSelect9.getItems().removeAll(agentSelect9.getItems());
-		agentSelect9.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect9.getItems().addAll("", "Always Defect", "Always Cooperate", "Tit For Tat");
 		agentSelect9.getSelectionModel().select("");
 		agentSelect10.getItems().removeAll(agentSelect10.getItems());
-		agentSelect10.getItems().addAll("", "Always Defect", "Always Cooperate");
+		agentSelect10.getItems().addAll("", "Always Defect", "Always Cooperate", "Tit For Tat");
 		agentSelect10.getSelectionModel().select("");
 	}
 
@@ -109,42 +109,17 @@ public class TournementView {
 	}
 
 	public void setResultField(String result, int num) {
-		switch (num) {
-		case 0:
-			resultField1.setText(result);
-			break;
-		case 1:
-			resultField2.setText(result);
-			break;
-		case 2:
-			resultField3.setText(result);
-			break;
-		case 3:
-			resultField4.setText(result);
-			break;
-		case 4:
-			resultField5.setText(result);
-			break;
-		case 5:
-			resultField6.setText(result);
-			break;
-		case 6:
-			resultField7.setText(result);
-			break;
-		case 7:
-			resultField8.setText(result);
-			break;
-		case 8:
-			resultField9.setText(result);
-			break;
-		case 9:
-			resultField10.setText(result);
-			break;
-		}
+		TextField[] fields = new TextField[] { resultField1, resultField2, resultField3, resultField4, resultField5,
+				resultField6, resultField7, resultField8, resultField9, resultField10 };
+		fields[num].setText(result);
 	}
 
-	public void setResultField(String result) {
-		resultField2.setText(result);
+	public void clearResultField() {
+		TextField[] fields = new TextField[] { resultField1, resultField2, resultField3, resultField4, resultField5,
+				resultField6, resultField7, resultField8, resultField9, resultField10 };
+		for (TextField field : fields) {
+			field.setText("");
+		}
 	}
 
 	public TextField getRoundsField() {
@@ -155,7 +130,7 @@ public class TournementView {
 		return playButton;
 	}
 
-	public static TournementView getInstance() {
+	public static TournamentView getInstance() {
 		return instance;
 	}
 

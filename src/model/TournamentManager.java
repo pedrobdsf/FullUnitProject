@@ -5,20 +5,23 @@ package model;
 
 import java.util.Observable;
 
-import strategies.AlwaysCooperateStrategy;
-import strategies.AlwaysDefectStrategy;
+import strategies.AlwaysCooperate;
+import strategies.AlwaysDefect;
+import strategies.Random;
+import strategies.TitForTat;
+
 /**
  * @author Pedro Freire
  *
  */
-public class TournementManager extends Observable{
-	
+public class TournamentManager extends Observable {
+
 	private GameMatrix matrix = new GameMatrix();
 	private Agent[] agentList;
-	
+
 	public void runGame(String[] stratList, int numOfRounds) {
 		agentList = new Agent[stratList.length];
-		for (int num = 0; num < agentList.length - 1; num++) {
+		for (int num = 0; num < agentList.length; num++) {
 			agentList[num] = stringToAgent(stratList[num]);
 		}
 		for (Agent agent1 : agentList) {
@@ -27,26 +30,34 @@ public class TournementManager extends Observable{
 					agent1.setOpponent(agent2);
 					agent2.setOpponent(agent1);
 					for (int round = 1; round <= numOfRounds; round++) {
-						matrix.evaluate(agent1.getStrat().choose(), agent2.getStrat().choose());
+						agent1.getStrat().choose();
+						agent2.getStrat().choose();
+						matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
 						agent1.incUtility(matrix.getResult1());
 						agent2.incUtility(matrix.getResult2());
+						agent1.getStrat().setLastChoice();
+						agent2.getStrat().setLastChoice();
 					}
 				}
 			}
 		}
 	}
-	
+
 	private Agent stringToAgent(String strat) {
 		switch (strat) {
 		case "Always Defect":
-			return new Agent(new AlwaysDefectStrategy());
+			return new Agent(new AlwaysDefect());
 		case "Always Cooperate":
-			return new Agent(new AlwaysCooperateStrategy());
+			return new Agent(new AlwaysCooperate());
+		case "Random":
+			return new Agent(new Random());
+		case "Tit For Tat":
+			return new Agent(new TitForTat());
 		default:
 			return null;
 		}
 	}
-	
+
 	public Agent[] getAgentList() {
 		return agentList;
 	}

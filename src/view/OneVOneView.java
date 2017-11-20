@@ -17,7 +17,7 @@ import javafx.scene.control.TextField;
 public class OneVOneView {
 
 	private static OneVOneView instance = null;
-	
+
 	@FXML
 	private ChoiceBox<String> agentSelect1;
 	@FXML
@@ -35,10 +35,10 @@ public class OneVOneView {
 	public void initialize() {
 		instance = this;
 		agentSelect1.getItems().removeAll(agentSelect1.getItems());
-		agentSelect1.getItems().addAll("Always Defect", "Always Cooperate");
+		agentSelect1.getItems().addAll("Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect1.getSelectionModel().select("Always Defect");
 		agentSelect2.getItems().removeAll(agentSelect1.getItems());
-		agentSelect2.getItems().addAll("Always Defect", "Always Cooperate");
+		agentSelect2.getItems().addAll("Always Defect", "Always Cooperate", "Random", "Tit For Tat");
 		agentSelect2.getSelectionModel().select("Always Defect");
 	}
 

@@ -15,9 +15,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.OneVOneManager;
-import model.TournementManager;
+import model.TournamentManager;
 import view.OneVOneView;
-import view.TournementView;
+import view.TournamentView;
 
 /**
  * @author Pedro Freire
@@ -29,17 +29,17 @@ public class Loader extends Application {
 	private HashMap<String, Node> displays = new HashMap<>();
 	private String oneVOne = "OneVOne";
 	private String oneVOneFXML = "../view/OneVOneFXML.fxml";
-	private String tournement = "Tournement";
-	private String tournementFXML = "../view/TournementFXML.fxml";
+	private String tournament = "Tournament";
+	private String tournamentFXML = "../view/TournamentFXML.fxml";
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
 		DisplayControl controller = new DisplayControl();
 		loadDisplay(oneVOne, oneVOneFXML);
-		loadDisplay(tournement, tournementFXML);
+		loadDisplay(tournament, tournamentFXML);
 		stage.setResizable(false);
-		setDisplay(tournement, controller);
+		setDisplay(tournament, controller);
 		Group root = new Group();
 		root.getChildren().add(controller);
 		Scene scene = new Scene(root);
@@ -67,9 +67,9 @@ public class Loader extends Application {
 			OneVOneManager manager = new OneVOneManager();
 			new OneVOneController(manager, OneVOneView.getInstance());
 		}
-		if (name.equals(tournement)) {
-			TournementManager manager = new TournementManager();
-			new TournementController(manager, TournementView.getInstance());
+		if (name.equals(tournament)) {
+			TournamentManager manager = new TournamentManager();
+			new TournamentController(manager, TournamentView.getInstance());
 		}
 	}
 }
