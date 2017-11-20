@@ -23,15 +23,17 @@ public class OneVOneController implements Observer, EventHandler<ActionEvent> {
 	public OneVOneController(OneVOneManager manager, OneVOneView view) {
 		this.manager = manager;
 		this.view = view;
+		view.addHandlers(this);
 		manager.addObserver(this);
 	}
 
 	@Override
 	public void handle(ActionEvent event) {
 		if (event.getSource() == view.getPlayButton()) {
-			System.out.println("pressed play");
 			manager.runGame(view.getAgentSelect1().getValue(), view.getAgentSelect2().getValue(),
 					Integer.parseInt(view.getRoundsField().getText()));
+			view.setResultField1(String.valueOf(manager.getAgent1().getUtility()));
+			view.setResultField2(String.valueOf(manager.getAgent2().getUtility()));
 		}
 	}
 

@@ -13,8 +13,9 @@ public class AlwaysDefectStrategy extends Strategy{
 		super();
 	}
 	
-	public void choose() {
-		currChoice = "D";
+	@Override
+	public String choose() {
+		return "D";
 	}
 
 }

@@ -13,8 +13,9 @@ public class AlwaysCooperateStrategy extends Strategy{
 		super();
 	}
 	
-	public void choose() {
-		currChoice = "C";
+	@Override
+	public String choose() {
+		return "C";
 	}
 
 }

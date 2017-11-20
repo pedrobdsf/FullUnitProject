@@ -14,6 +14,7 @@ public class GameMatrix {
 	
 	public void evaluate(String choice1, String choice2) {
 		String round = choice1 + choice2;
+		System.out.println(round);
 		switch(round) {
 		case "CC":
 			result1 = 2;
