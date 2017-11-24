@@ -7,7 +7,9 @@ import java.util.Observable;
 
 import strategies.AlwaysCooperate;
 import strategies.AlwaysDefect;
+import strategies.Gradual;
 import strategies.Grudger;
+import strategies.Pavlov;
 import strategies.Random;
 import strategies.SoftGrudger;
 import strategies.TitForTat;
@@ -41,8 +43,8 @@ public class TournamentManager extends Observable {
 						agent1.getStrat().setLastChoice();
 						agent2.getStrat().setLastChoice();
 					}
-					agent1.resetLastChoice();
-					agent2.resetLastChoice();
+					agent1.reset();
+					agent2.reset();
 					System.out.println();
 				}
 			}
@@ -65,6 +67,10 @@ public class TournamentManager extends Observable {
 			return new Agent(new Grudger());
 		case "Soft Grudger":
 			return new Agent(new SoftGrudger());
+		case "Gradual":
+			return new Agent(new Gradual());
+		case "Pavlov":
+			return new Agent(new Pavlov());
 		default:
 			return null;
 		}

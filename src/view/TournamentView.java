@@ -68,43 +68,43 @@ public class TournamentView {
 		instance = this;
 		agentSelect1.getItems().removeAll(agentSelect1.getItems());
 		agentSelect1.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect1.getSelectionModel().select("");
 		agentSelect2.getItems().removeAll(agentSelect2.getItems());
 		agentSelect2.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect2.getSelectionModel().select("");
 		agentSelect3.getItems().removeAll(agentSelect3.getItems());
 		agentSelect3.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect3.getSelectionModel().select("");
 		agentSelect4.getItems().removeAll(agentSelect4.getItems());
 		agentSelect4.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect4.getSelectionModel().select("");
 		agentSelect5.getItems().removeAll(agentSelect5.getItems());
 		agentSelect5.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect5.getSelectionModel().select("");
 		agentSelect6.getItems().removeAll(agentSelect6.getItems());
 		agentSelect6.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect6.getSelectionModel().select("");
 		agentSelect7.getItems().removeAll(agentSelect7.getItems());
 		agentSelect7.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect7.getSelectionModel().select("");
 		agentSelect8.getItems().removeAll(agentSelect8.getItems());
 		agentSelect8.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect8.getSelectionModel().select("");
 		agentSelect9.getItems().removeAll(agentSelect9.getItems());
 		agentSelect9.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat", "Tit For Two Tats",
-				"Grudger", "Soft Grudger");
+				"Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect9.getSelectionModel().select("");
 		agentSelect10.getItems().removeAll(agentSelect10.getItems());
 		agentSelect10.getItems().addAll("", "Always Defect", "Always Cooperate", "Random", "Tit For Tat",
-				"Tit For Two Tats", "Grudger", "Soft Grudger");
+				"Tit For Two Tats", "Grudger", "Soft Grudger", "Gradual", "Pavlov");
 		agentSelect10.getSelectionModel().select("");
 	}
 

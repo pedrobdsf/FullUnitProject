@@ -33,7 +33,7 @@ public class Strategy {
 		return currChoice;
 	}
 	
-	public void resetLastChoice() {
+	public void reset() {
 		lastChoice = null;
 	}
 
