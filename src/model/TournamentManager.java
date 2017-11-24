@@ -5,6 +5,7 @@ package model;
 
 import java.util.Observable;
 
+import strategies.Adaptive;
 import strategies.AlwaysCooperate;
 import strategies.AlwaysDefect;
 import strategies.Gradual;
@@ -38,6 +39,7 @@ public class TournamentManager extends Observable {
 						agent1.getStrat().choose();
 						agent2.getStrat().choose();
 						matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
+						matrix.printRound();
 						agent1.incUtility(matrix.getResult1());
 						agent2.incUtility(matrix.getResult2());
 						agent1.getStrat().setLastChoice();
@@ -53,24 +55,26 @@ public class TournamentManager extends Observable {
 
 	private Agent stringToAgent(String strat) {
 		switch (strat) {
+		case "Adaptive":
+			return new Agent(new Adaptive());
 		case "Always Defect":
 			return new Agent(new AlwaysDefect());
 		case "Always Cooperate":
 			return new Agent(new AlwaysCooperate());
+		case "Gradual":
+			return new Agent(new Gradual());
+		case "Grudger":
+			return new Agent(new Grudger());
+		case "Pavlov":
+			return new Agent(new Pavlov());
 		case "Random":
 			return new Agent(new Random());
+		case "Soft Grudger":
+			return new Agent(new SoftGrudger());
 		case "Tit For Tat":
 			return new Agent(new TitForTat());
 		case "Tit For Two Tats":
 			return new Agent(new TitForTwoTats());
-		case "Grudger":
-			return new Agent(new Grudger());
-		case "Soft Grudger":
-			return new Agent(new SoftGrudger());
-		case "Gradual":
-			return new Agent(new Gradual());
-		case "Pavlov":
-			return new Agent(new Pavlov());
 		default:
 			return null;
 		}

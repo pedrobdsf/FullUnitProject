@@ -8,7 +8,7 @@ package strategies;
  *
  */
 public class TitForTwoTats extends Strategy {
-	
+
 	private String lastOppChoice;
 
 	public TitForTwoTats() {

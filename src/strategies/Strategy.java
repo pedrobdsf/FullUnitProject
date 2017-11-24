@@ -32,7 +32,7 @@ public class Strategy {
 	public String getCurrChoice() {
 		return currChoice;
 	}
-	
+
 	public void reset() {
 		lastChoice = null;
 	}

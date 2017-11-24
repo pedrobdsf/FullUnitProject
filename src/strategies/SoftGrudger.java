@@ -11,7 +11,7 @@ public class SoftGrudger extends Strategy {
 
 	private int defect;
 	private int coop;
-	
+
 	public SoftGrudger() {
 		super();
 		defect = 0;
@@ -33,7 +33,7 @@ public class SoftGrudger extends Strategy {
 			coop--;
 		}
 	}
-	
+
 	@Override
 	public void reset() {
 		lastChoice = null;
