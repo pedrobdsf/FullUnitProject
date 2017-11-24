@@ -62,6 +62,8 @@ public class TournamentView {
 	private TextField roundsField;
 	@FXML
 	private Button playButton;
+	@FXML
+	private TextField totalUtilityField;
 
 	@FXML
 	public void initialize() {
@@ -118,6 +120,12 @@ public class TournamentView {
 				agentSelect8.getValue(), agentSelect9.getValue(), agentSelect10.getValue() };
 	}
 
+	public String[] getResultsList() {
+		return new String[] { resultField1.getText(), resultField2.getText(), resultField3.getText(),
+				resultField4.getText(), resultField5.getText(), resultField6.getText(), resultField7.getText(),
+				resultField8.getText(), resultField9.getText(), resultField10.getText() };
+	}
+
 	public void setResultField(String result, int num) {
 		TextField[] fields = new TextField[] { resultField1, resultField2, resultField3, resultField4, resultField5,
 				resultField6, resultField7, resultField8, resultField9, resultField10 };
@@ -130,6 +138,17 @@ public class TournamentView {
 		for (TextField field : fields) {
 			field.setText("");
 		}
+	}
+
+	public void setTotalUtility() {
+		int value = 0;
+		for (String text : getResultsList()) {
+			if (!text.equals("")) {
+				value += Integer.valueOf(text);
+			}
+		}
+		System.out.println(value);
+		totalUtilityField.setText(String.valueOf(value));
 	}
 
 	public TextField getRoundsField() {

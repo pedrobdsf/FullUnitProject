@@ -37,6 +37,7 @@ public class TournamentController implements Observer, EventHandler<ActionEvent>
 					view.setResultField(String.valueOf(manager.getAgentList()[num].getUtility()), num);
 				}
 			}
+			view.setTotalUtility();
 		}
 	}
 
