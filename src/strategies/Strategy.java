@@ -32,6 +32,10 @@ public class Strategy {
 	public String getCurrChoice() {
 		return currChoice;
 	}
+	
+	public void resetLastChoice() {
+		lastChoice = null;
+	}
 
 	public void setLastChoice() {
 		lastChoice = currChoice;

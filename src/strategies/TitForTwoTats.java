@@ -7,9 +7,11 @@ package strategies;
  * @author Pedro Freire
  *
  */
-public class TitForTat extends Strategy {
+public class TitForTwoTats extends Strategy {
+	
+	private String lastOppChoice;
 
-	public TitForTat() {
+	public TitForTwoTats() {
 		super();
 	}
 
@@ -17,8 +19,10 @@ public class TitForTat extends Strategy {
 	public void choose() {
 		if (opponent.getLastChoice() == null) {
 			currChoice = "C";
-		} else {
+		} else if (opponent.getLastChoice().equals(lastOppChoice)) {
 			currChoice = opponent.getLastChoice();
+		} else {
+			lastOppChoice = opponent.getLastChoice();
 		}
 	}
 

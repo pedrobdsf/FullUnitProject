@@ -7,9 +7,9 @@ package strategies;
  * @author Pedro Freire
  *
  */
-public class TitForTat extends Strategy {
+public class Grudger extends Strategy {
 
-	public TitForTat() {
+	public Grudger() {
 		super();
 	}
 
@@ -17,8 +17,8 @@ public class TitForTat extends Strategy {
 	public void choose() {
 		if (opponent.getLastChoice() == null) {
 			currChoice = "C";
-		} else {
-			currChoice = opponent.getLastChoice();
+		} else if (opponent.getLastChoice().equals("D")) {
+			currChoice = "D";
 		}
 	}
 

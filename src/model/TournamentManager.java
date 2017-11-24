@@ -7,8 +7,11 @@ import java.util.Observable;
 
 import strategies.AlwaysCooperate;
 import strategies.AlwaysDefect;
+import strategies.Grudger;
 import strategies.Random;
+import strategies.SoftGrudger;
 import strategies.TitForTat;
+import strategies.TitForTwoTats;
 
 /**
  * @author Pedro Freire
@@ -38,6 +41,9 @@ public class TournamentManager extends Observable {
 						agent1.getStrat().setLastChoice();
 						agent2.getStrat().setLastChoice();
 					}
+					agent1.resetLastChoice();
+					agent2.resetLastChoice();
+					System.out.println();
 				}
 			}
 		}
@@ -53,6 +59,12 @@ public class TournamentManager extends Observable {
 			return new Agent(new Random());
 		case "Tit For Tat":
 			return new Agent(new TitForTat());
+		case "Tit For Two Tats":
+			return new Agent(new TitForTwoTats());
+		case "Grudger":
+			return new Agent(new Grudger());
+		case "Soft Grudger":
+			return new Agent(new SoftGrudger());
 		default:
 			return null;
 		}

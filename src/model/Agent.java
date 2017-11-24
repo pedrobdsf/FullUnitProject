@@ -34,5 +34,9 @@ public class Agent {
 	public void setOpponent(Agent opponent) {
 		strat.setOpponent(opponent.getStrat());
 	}
+	
+	public void resetLastChoice() {
+		strat.resetLastChoice();
+	}
 
 }
