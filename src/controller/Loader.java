@@ -28,9 +28,9 @@ public class Loader extends Application {
 	private static Stage stage;
 	private HashMap<String, Node> displays = new HashMap<>();
 	private String oneVOne = "OneVOne";
-	private String oneVOneFXML = "../view/OneVOneFXML.fxml";
+	private String oneVOneFXML = "/view/OneVOneFXML.fxml";
 	private String tournament = "Tournament";
-	private String tournamentFXML = "../view/TournamentFXML.fxml";
+	private String tournamentFXML = "/view/TournamentFXML.fxml";
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {

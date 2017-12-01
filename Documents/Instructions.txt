@@ -1,0 +1,10 @@
+The program opens a window displaying a tournament for the Prisoner's Dilemma.
+
+To play the tournament:
+• Select at least two strategies from the choice boxes.
+• Input the number of rounds per game on the textfield below the choice boxes.
+• Press play.
+
+Resuts:
+• The textfields on the right will display the score of the respective agent.
+• The textfield on the bottom textfield the total score will be displayed.
