@@ -8,19 +8,19 @@ import java.util.Observer;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import model.TournamentManager;
-import view.TournamentView;
+import model.EnvironmentManager;
+import view.EnvironmentView;
 
 /**
  * @author Pedro Freire
  *
  */
-public class TournamentController implements Observer, EventHandler<ActionEvent> {
+public class EnvironmentController implements Observer, EventHandler<ActionEvent> {
 
-	private TournamentView view;
-	private TournamentManager manager;
+	private EnvironmentView view;
+	private EnvironmentManager manager;
 
-	public TournamentController(TournamentManager manager, TournamentView view) {
+	public EnvironmentController(EnvironmentManager manager, EnvironmentView view) {
 		this.manager = manager;
 		this.view = view;
 		view.addHandlers(this);
@@ -31,7 +31,7 @@ public class TournamentController implements Observer, EventHandler<ActionEvent>
 	public void handle(ActionEvent event) {
 		if (event.getSource() == view.getPlayButton()) {
 			view.clearResultField();
-			manager.runGame(view.getAgentSelectList(), Integer.parseInt(view.getRoundsField().getText()));
+			manager.runGame(view.getAgentSelectList(), view.getNumberOfRounds(), view.getNumberOfGames());
 			for (int num = 0; num < manager.getAgentList().length; num++) {
 				if (manager.getAgentList()[num] != null) {
 					view.setResultField(String.valueOf(manager.getAgentList()[num].getTotalUtility()), num);

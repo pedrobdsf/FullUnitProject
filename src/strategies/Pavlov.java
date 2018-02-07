@@ -15,6 +15,7 @@ public class Pavlov extends Strategy {
 
 	public Pavlov() {
 		super();
+		name = "Pavlov";
 	}
 
 	@Override

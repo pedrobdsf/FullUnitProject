@@ -14,6 +14,7 @@ public class SoftGrudger extends Strategy {
 
 	public SoftGrudger() {
 		super();
+		name = "Soft Grudger";
 		defect = 0;
 		coop = 0;
 	}

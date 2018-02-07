@@ -11,6 +11,7 @@ public class AlwaysDefect extends Strategy {
 
 	public AlwaysDefect() {
 		super();
+		name = "Always Defect";
 	}
 
 	@Override

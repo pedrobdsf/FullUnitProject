@@ -9,6 +9,7 @@ package strategies;
  */
 public class Strategy {
 
+	protected String name;
 	protected Strategy opponent;
 	protected String currChoice;
 	protected String lastChoice;
@@ -43,6 +44,10 @@ public class Strategy {
 
 	public String getLastChoice() {
 		return lastChoice;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 }

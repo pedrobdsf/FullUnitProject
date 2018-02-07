@@ -11,6 +11,7 @@ public class Grudger extends Strategy {
 
 	public Grudger() {
 		super();
+		name = "Grudger";
 	}
 
 	@Override

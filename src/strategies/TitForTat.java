@@ -11,6 +11,7 @@ public class TitForTat extends Strategy {
 
 	public TitForTat() {
 		super();
+		name = "Tit For Tat";
 	}
 
 	@Override

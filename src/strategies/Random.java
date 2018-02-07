@@ -11,6 +11,7 @@ public class Random extends Strategy {
 
 	public Random() {
 		super();
+		name = "Random";
 	}
 
 	@Override

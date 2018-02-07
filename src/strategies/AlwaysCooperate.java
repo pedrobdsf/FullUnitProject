@@ -11,6 +11,7 @@ public class AlwaysCooperate extends Strategy {
 
 	public AlwaysCooperate() {
 		super();
+		name = "Always Cooperate";
 	}
 
 	@Override

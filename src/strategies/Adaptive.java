@@ -23,6 +23,7 @@ public class Adaptive extends Strategy {
 
 	public Adaptive() {
 		super();
+		name = "Adaptive";
 		defectCount = 0;
 		totalDefectGain = 0;
 		coopCount = 0;
@@ -33,7 +34,7 @@ public class Adaptive extends Strategy {
 
 	@Override
 	public void choose() {
-		
+
 		if (lastChoice != null) {
 			matrix.evaluate(lastChoice, opponent.getLastChoice());
 			if (matrix.getResult1() == 3 || matrix.getResult1() == 1) {
@@ -46,7 +47,7 @@ public class Adaptive extends Strategy {
 				avgCoopScore = totalCoopGain / coopCount;
 			}
 		}
-		
+
 		if (opponent.getLastChoice() == null) {
 			currChoice = "C";
 			coopCount++;

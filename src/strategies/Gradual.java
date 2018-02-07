@@ -12,9 +12,10 @@ public class Gradual extends Strategy {
 	private int totalDefect;
 	private int defect;
 	private int coop;
-	
+
 	public Gradual() {
 		super();
+		name = "Gradual";
 		totalDefect = 0;
 		defect = 0;
 		coop = 0;
@@ -40,7 +41,7 @@ public class Gradual extends Strategy {
 			currChoice = "C";
 		}
 	}
-	
+
 	@Override
 	public void reset() {
 		lastChoice = null;

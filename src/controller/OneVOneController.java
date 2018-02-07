@@ -32,8 +32,8 @@ public class OneVOneController implements Observer, EventHandler<ActionEvent> {
 		if (event.getSource() == view.getPlayButton()) {
 			manager.runGame(view.getAgentSelect1().getValue(), view.getAgentSelect2().getValue(),
 					Integer.parseInt(view.getRoundsField().getText()));
-			view.setResultField1(String.valueOf(manager.getAgent1().getUtility()));
-			view.setResultField2(String.valueOf(manager.getAgent2().getUtility()));
+			view.setResultField1(String.valueOf(manager.getAgent1().getTotalUtility()));
+			view.setResultField2(String.valueOf(manager.getAgent2().getTotalUtility()));
 		}
 	}
 

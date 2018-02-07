@@ -18,13 +18,14 @@ import strategies.TitForTat;
  */
 public class OneVOneManager extends Observable {
 
+	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
 	private Agent agent1;
 	private Agent agent2;
 
 	public void runGame(String strat1, String strat2, int numOfRounds) {
-		agent1 = stringToAgent(strat1);
-		agent2 = stringToAgent(strat2);
+		agent1 = agentManager.stringToAgent(strat1);
+		agent2 = agentManager.stringToAgent(strat2);
 		if (agent1 != null && agent2 != null) {
 			agent1.setOpponent(agent2);
 			agent2.setOpponent(agent1);
@@ -39,22 +40,6 @@ public class OneVOneManager extends Observable {
 			}
 		} else {
 			JOptionPane.showMessageDialog(null, "Select two agents.", "Warning", JOptionPane.WARNING_MESSAGE);
-		}
-	}
-
-	private Agent stringToAgent(String strat) {
-		switch (strat) {
-		case "Always Defect":
-			return new Agent(new AlwaysDefect());
-		case "Always Cooperate":
-			return new Agent(new AlwaysCooperate());
-		case "Random":
-			return new Agent(new Random());
-		case "Tit For Tat":
-			return new Agent(new TitForTat());
-		default:
-			JOptionPane.showMessageDialog(null, "Invalid agent selection.", "Error", JOptionPane.ERROR_MESSAGE);
-			return null;
 		}
 	}
 

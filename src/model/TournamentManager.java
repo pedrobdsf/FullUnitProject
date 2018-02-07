@@ -5,30 +5,20 @@ package model;
 
 import java.util.Observable;
 
-import strategies.Adaptive;
-import strategies.AlwaysCooperate;
-import strategies.AlwaysDefect;
-import strategies.Gradual;
-import strategies.Grudger;
-import strategies.Pavlov;
-import strategies.Random;
-import strategies.SoftGrudger;
-import strategies.TitForTat;
-import strategies.TitForTwoTats;
-
 /**
  * @author Pedro Freire
  *
  */
 public class TournamentManager extends Observable {
 
+	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
 	private Agent[] agentList;
 
 	public void runGame(String[] stratList, int numOfRounds) {
 		agentList = new Agent[stratList.length];
 		for (int num = 0; num < agentList.length; num++) {
-			agentList[num] = stringToAgent(stratList[num]);
+			agentList[num] = agentManager.stringToAgent(stratList[num]);
 		}
 		for (Agent agent1 : agentList) {
 			for (Agent agent2 : agentList) {
@@ -50,33 +40,6 @@ public class TournamentManager extends Observable {
 					System.out.println();
 				}
 			}
-		}
-	}
-
-	private Agent stringToAgent(String strat) {
-		switch (strat) {
-		case "Adaptive":
-			return new Agent(new Adaptive());
-		case "Always Defect":
-			return new Agent(new AlwaysDefect());
-		case "Always Cooperate":
-			return new Agent(new AlwaysCooperate());
-		case "Gradual":
-			return new Agent(new Gradual());
-		case "Grudger":
-			return new Agent(new Grudger());
-		case "Pavlov":
-			return new Agent(new Pavlov());
-		case "Random":
-			return new Agent(new Random());
-		case "Soft Grudger":
-			return new Agent(new SoftGrudger());
-		case "Tit For Tat":
-			return new Agent(new TitForTat());
-		case "Tit For Two Tats":
-			return new Agent(new TitForTwoTats());
-		default:
-			return null;
 		}
 	}
 
