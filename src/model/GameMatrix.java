@@ -17,15 +17,15 @@ public class GameMatrix {
 		round = choice1 + choice2;
 		switch (round) {
 		case "CC":
-			result1 = 2;
-			result2 = 2;
+			result1 = 3;
+			result2 = 3;
 			break;
 		case "CD":
 			result1 = 0;
-			result2 = 3;
+			result2 = 5;
 			break;
 		case "DC":
-			result1 = 3;
+			result1 = 5;
 			result2 = 0;
 			break;
 		case "DD":
