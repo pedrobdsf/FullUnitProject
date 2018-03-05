@@ -29,6 +29,8 @@ public class Loader extends Application {
 
 	private static Stage stage;
 	private HashMap<String, Node> displays = new HashMap<>();
+	private String mainMenu = "MainMenu";
+	private String mainMenuFXML = "/view/MainMenuFXML.fxml";
 	private String oneVOne = "OneVOne";
 	private String oneVOneFXML = "/view/OneVOneFXML.fxml";
 	private String tournament = "Tournament";
@@ -40,10 +42,11 @@ public class Loader extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		stage = primaryStage;
 		DisplayControl controller = new DisplayControl();
+		loadDisplay(mainMenu, mainMenuFXML);
 		loadDisplay(oneVOne, oneVOneFXML);
 		loadDisplay(tournament, tournamentFXML);
 		loadDisplay(environment, environmentFXML);
-		setDisplay(environment, controller);
+		setDisplay(mainMenu, controller);
 		Group root = new Group();
 		root.getChildren().add(controller);
 		Scene scene = new Scene(root);

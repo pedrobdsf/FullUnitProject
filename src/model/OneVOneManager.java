@@ -7,11 +7,6 @@ import java.util.Observable;
 
 import javax.swing.JOptionPane;
 
-import strategies.AlwaysCooperate;
-import strategies.AlwaysDefect;
-import strategies.Random;
-import strategies.TitForTat;
-
 /**
  * @author Pedro Freire
  *
