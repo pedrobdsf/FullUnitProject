@@ -22,6 +22,7 @@ public class Agent {
 	private int totalUtility;
 	private int gameUtility;
 	private int avgUtility = 0;
+	private int newAvgUtility;
 	private int utilityThreshold = 2;
 	private Map<Agent, Integer> knownAgents = new HashMap<>();
 	private List<Agent> acceptedAgents = new ArrayList<>();
@@ -50,17 +51,22 @@ public class Agent {
 	public int getAvgUtility() {
 		return avgUtility;
 	}
-
+	
 	public void setAvgUtility(int avgUtility) {
 		this.avgUtility = avgUtility;
 	}
+	
+	public int getNewAvgUtility() {
+		return newAvgUtility;
+	}
 
-	public int calculateAvgUtility() {
+	public void setNewAvgUtility() {
 		Collection<Integer> utilities = knownAgents.values();
+		int temp = 0;
 		for (Integer utility : utilities) {
-			totalUtility += utility;
+			temp += utility;
 		}
-		return totalUtility / knownAgents.size();
+		newAvgUtility = temp / knownAgents.size();
 	}
 
 	public boolean isInUtilityThreshold(int avgUtility) {
