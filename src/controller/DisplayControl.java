@@ -12,6 +12,8 @@ import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
@@ -20,6 +22,25 @@ import javafx.util.Duration;
  *
  */
 public class DisplayControl extends StackPane{
+	
+	private HashMap<String, Pane> displayMap = new HashMap<>();
+  private Scene main;
+
+  public DisplayControl(Scene main) {
+      this.main = main;
+  }
+
+  protected void addDisplay(String name, Pane pane){
+       displayMap.put(name, pane);
+  }
+
+  protected void removeDisplay(String name){
+      displayMap.remove(name);
+  }
+
+  protected void activate(String name){
+      main.setRoot( displayMap.get(name) );
+  }
 	
 	public void setDisplay(String name, HashMap<String, Node> displays) {
       DoubleProperty opacity = opacityProperty();

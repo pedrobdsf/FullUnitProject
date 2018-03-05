@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EnvironmentView">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainMenuView">
    <children>
       <GridPane prefHeight="800.0" prefWidth="1200.0">
         <columnConstraints>
@@ -27,7 +27,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="41.0" prefWidth="74.0" text="Help">
+                  <Button fx:id="infoButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="74.0" text="Info">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -63,7 +63,7 @@
                <children>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Tournament">
+                        <Button fx:id="tournamentButton" mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Tournament">
                            <font>
                               <Font size="36.0" />
                            </font>
@@ -75,7 +75,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Environement">
+                        <Button fx:id="environmentButton" mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Environement">
                            <font>
                               <Font size="36.0" />
                            </font>
@@ -87,7 +87,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="One V One">
+                        <Button fx:id="oneVOneButton" mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="One V One">
                            <font>
                               <Font size="36.0" />
                            </font>
