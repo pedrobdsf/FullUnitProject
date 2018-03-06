@@ -35,8 +35,9 @@ public class Loader extends Application {
 		controller.addDisplay("OneVOne", FXMLLoader.load(getClass().getResource("/view/OneVOneFXML.fxml")));
 		controller.addDisplay("Tournament", FXMLLoader.load(getClass().getResource("/view/TournamentFXML.fxml")));
 		controller.addDisplay("Environment", FXMLLoader.load(getClass().getResource("/view/EnvironmentFXML.fxml")));
-		controller.activate("MainMenu");
-		handleController("MainMenu");
+		controller.addDisplay("Statistics", FXMLLoader.load(getClass().getResource("/view/StatisticsFXML.fxml")));
+		controller.activate("Statistics");
+		handleController("Statistics");
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.show();
