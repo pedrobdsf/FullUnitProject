@@ -46,7 +46,7 @@ public class MainMenuController implements EventHandler<ActionEvent> {
 		}
 		if (event.getSource() == view.getInfoButton()) {
 			try {
-				//loader.changeDisplay("Info");
+				loader.newDisplay("Statistics");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

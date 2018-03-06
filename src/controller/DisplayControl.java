@@ -33,4 +33,5 @@ public class DisplayControl extends StackPane{
   protected void activate(String name){
       scene.setRoot( displayMap.get(name) );
   }
+  
 }

@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 
 /**
  * @author Pedro Freire
@@ -37,9 +36,6 @@ public class StatisticsView {
 	private Button nextButton;
 	@FXML
 	private Button exitButton;
-
-	@FXML
-	private VBox box;
 
 	@FXML
 	public void initialize() {

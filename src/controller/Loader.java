@@ -15,6 +15,7 @@ import model.TournamentManager;
 import view.EnvironmentView;
 import view.MainMenuView;
 import view.OneVOneView;
+import view.StatisticsView;
 import view.TournamentView;
 
 /**
@@ -36,20 +37,28 @@ public class Loader extends Application {
 		controller.addDisplay("Tournament", FXMLLoader.load(getClass().getResource("/view/TournamentFXML.fxml")));
 		controller.addDisplay("Environment", FXMLLoader.load(getClass().getResource("/view/EnvironmentFXML.fxml")));
 		controller.addDisplay("Statistics", FXMLLoader.load(getClass().getResource("/view/StatisticsFXML.fxml")));
-		controller.activate("Statistics");
-		handleController("Statistics");
+		controller.activate("MainMenu");
+		handleController("MainMenu", stage);
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.show();
 	}
 
 	public void changeDisplay(String name) throws Exception {
-		Parent pane = FXMLLoader.load(getClass().getResource("/view/"+name+"FXML.fxml"));
-		handleController(name);
+		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
+		handleController(name, stage);
 		stage.getScene().setRoot(pane);
 	}
 
-	private void handleController(String name) {
+	public void newDisplay(String name) throws Exception {
+		Stage newStage = new Stage();
+		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
+		newStage.setScene(new Scene(pane));
+		newStage.show();
+		handleController(name, newStage);
+	}
+
+	private void handleController(String name, Stage stage) {
 		if (name.equals("MainMenu")) {
 			new MainMenuController(MainMenuView.getInstance());
 		}
@@ -64,6 +73,9 @@ public class Loader extends Application {
 		if (name.equals("Environment")) {
 			EnvironmentManager manager = new EnvironmentManager();
 			new EnvironmentController(manager, EnvironmentView.getInstance());
+		}
+		if (name.equals("Statistics")) {
+			new StatisticsController(StatisticsView.getInstance(), stage);
 		}
 	}
 
