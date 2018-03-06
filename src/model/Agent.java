@@ -18,6 +18,7 @@ import strategies.Strategy;
  */
 public class Agent {
 
+	private int id;
 	private Strategy strat;
 	private int totalUtility;
 	private int gameUtility;
@@ -26,10 +27,19 @@ public class Agent {
 	private int utilityThreshold = 2;
 	private Map<Agent, Integer> knownAgents = new HashMap<>();
 	private List<Agent> acceptedAgents = new ArrayList<>();
+	private Statistics stats = new Statistics();
 
 	public Agent(Strategy strat) {
 		this.strat = strat;
 		this.totalUtility = 0;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Strategy getStrat() {
@@ -51,11 +61,11 @@ public class Agent {
 	public int getAvgUtility() {
 		return avgUtility;
 	}
-	
+
 	public void setAvgUtility(int avgUtility) {
 		this.avgUtility = avgUtility;
 	}
-	
+
 	public int getNewAvgUtility() {
 		return newAvgUtility;
 	}
@@ -91,6 +101,11 @@ public class Agent {
 
 	public void mapOpponent(Agent opponent, int utility) {
 		knownAgents.put(opponent, utility);
+		stats.mapAgent(opponent, gameUtility);
+	}
+
+	public Statistics getStats() {
+		return stats;
 	}
 
 	public void printMap(Map<Agent, Integer> map) {

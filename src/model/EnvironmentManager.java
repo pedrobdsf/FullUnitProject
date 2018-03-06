@@ -47,6 +47,8 @@ public class EnvironmentManager extends Observable {
 					}
 					agent1.setAvgUtility(agent1.getNewAvgUtility());
 					System.out.println("Keep threshold");
+					agent1.printMap(agent1.getStats().getGamesPlayed());
+					agent1.printMap(agent1.getStats().getUtilityGained());
 				}
 				count++;
 			}

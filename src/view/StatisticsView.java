@@ -3,6 +3,8 @@
  */
 package view;
 
+import java.util.Map;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -40,11 +42,11 @@ public class StatisticsView {
 	@FXML
 	public void initialize() {
 		instance = this;
-		initGamesPlayedChart();
-		initUtilityGainedChart();
+		//initGamesPlayedChart();
+		//initUtilityGainedChart();
 	}
 
-	private void initGamesPlayedChart() {
+	private void initGamesPlayedChart(Map<String, Integer> map) {
 		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Grapefruit", 13),
 				new PieChart.Data("Oranges", 25), new PieChart.Data("Plums", 10), new PieChart.Data("Pears", 22),
 				new PieChart.Data("Apples", 30));

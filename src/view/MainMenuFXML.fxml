@@ -75,7 +75,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
                      <children>
-                        <Button fx:id="environmentButton" mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Environement">
+                        <Button fx:id="environmentButton" mnemonicParsing="false" prefHeight="136.0" prefWidth="282.0" text="Environment">
                            <font>
                               <Font size="36.0" />
                            </font>
