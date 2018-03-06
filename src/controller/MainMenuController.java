@@ -25,31 +25,26 @@ public class MainMenuController implements EventHandler<ActionEvent> {
 	public void handle(ActionEvent event) {
 		if (event.getSource() == view.getOneVOneButton()) {
 			try {
-				loader.changeDisplay("OneVOne");
+				loader.changeDisplay("OneVOne", loader.getStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		if (event.getSource() == view.getTournamentButton()) {
 			try {
-				loader.changeDisplay("Tournament");
+				loader.changeDisplay("Tournament", loader.getStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		if (event.getSource() == view.getEnvironmentButton()) {
 			try {
-				loader.changeDisplay("Environment");
+				loader.changeDisplay("Environment", loader.getStage());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		if (event.getSource() == view.getInfoButton()) {
-			try {
-				loader.newDisplay("Statistics");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
 	}
 

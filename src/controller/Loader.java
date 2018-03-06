@@ -15,7 +15,6 @@ import model.TournamentManager;
 import view.EnvironmentView;
 import view.MainMenuView;
 import view.OneVOneView;
-import view.StatisticsView;
 import view.TournamentView;
 
 /**
@@ -44,18 +43,18 @@ public class Loader extends Application {
 		stage.show();
 	}
 
-	public void changeDisplay(String name) throws Exception {
+	public void changeDisplay(String name, Stage stage) throws Exception {
 		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
 		handleController(name, stage);
 		stage.getScene().setRoot(pane);
 	}
 
-	public void newDisplay(String name) throws Exception {
+	public Stage newDisplay(String name) throws Exception {
 		Stage newStage = new Stage();
 		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
 		newStage.setScene(new Scene(pane));
 		newStage.show();
-		handleController(name, newStage);
+		return newStage;
 	}
 
 	private void handleController(String name, Stage stage) {
@@ -74,9 +73,10 @@ public class Loader extends Application {
 			EnvironmentManager manager = new EnvironmentManager();
 			new EnvironmentController(manager, EnvironmentView.getInstance());
 		}
-		if (name.equals("Statistics")) {
-			new StatisticsController(StatisticsView.getInstance(), stage);
-		}
+	}
+	
+	public Stage getStage() {
+		return stage;
 	}
 
 }

@@ -14,14 +14,14 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StatisticsView">
    <children>
-      <GridPane prefHeight="800.0" prefWidth="1200.0">
+      <GridPane prefHeight="400.0" prefWidth="600.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="153.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="512.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="446.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="256.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="446.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <GridPane GridPane.rowIndex="1">
@@ -30,8 +30,8 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="422.0" minHeight="10.0" prefHeight="405.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="108.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="422.0" minHeight="10.0" prefHeight="220.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="251.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <VBox fx:id="box" alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -48,12 +48,12 @@
                      <children>
                         <Label text="Total:">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
                         <Label fx:id="totalGames" text="X">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="10.0" />
@@ -65,12 +65,12 @@
                      <children>
                         <Label text="Total:">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                         </Label>
                         <Label fx:id="totalUtility" text="X">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="10.0" />
@@ -91,12 +91,12 @@
                <children>
                   <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="77.0" prefWidth="140.0" text="Exit">
+                        <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="45.0" prefWidth="84.0" text="Exit">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="30.0" right="50.0" />
+                              <Insets bottom="20.0" right="30.0" />
                            </VBox.margin>
                         </Button>
                      </children>
@@ -105,18 +105,18 @@
                      <children>
                         <Button fx:id="prevButton" mnemonicParsing="false" text="&lt;">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                            <HBox.margin>
-                              <Insets bottom="30.0" left="50.0" />
+                              <Insets bottom="20.0" left="30.0" />
                            </HBox.margin>
                         </Button>
                         <Button fx:id="nextButton" mnemonicParsing="false" text="&gt;">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="20.0" />
                            </font>
                            <HBox.margin>
-                              <Insets bottom="30.0" left="15.0" />
+                              <Insets bottom="20.0" left="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -127,12 +127,12 @@
                <children>
                   <Label text="Agent">
                      <font>
-                        <Font size="69.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <Label fx:id="agentNumber" text="X">
                      <font>
-                        <Font size="69.0" />
+                        <Font size="36.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="20.0" />

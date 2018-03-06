@@ -61,6 +61,26 @@ public class EnvironmentView {
 	@FXML
 	private TextField roundsField;
 	@FXML
+	private Button stats1;
+	@FXML
+	private Button stats2;
+	@FXML
+	private Button stats3;
+	@FXML
+	private Button stats4;
+	@FXML
+	private Button stats5;
+	@FXML
+	private Button stats6;
+	@FXML
+	private Button stats7;
+	@FXML
+	private Button stats8;
+	@FXML
+	private Button stats9;
+	@FXML
+	private Button stats10;
+	@FXML
 	private TextField gamesField;
 	@FXML
 	private Button playButton;
@@ -114,6 +134,16 @@ public class EnvironmentView {
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		playButton.setOnAction(controller);
+		stats1.setOnAction(controller);
+		stats2.setOnAction(controller);
+		stats3.setOnAction(controller);
+		stats4.setOnAction(controller);
+		stats5.setOnAction(controller);
+		stats6.setOnAction(controller);
+		stats7.setOnAction(controller);
+		stats8.setOnAction(controller);
+		stats9.setOnAction(controller);
+		stats10.setOnAction(controller);
 	}
 
 	public String[] getAgentSelectList() {
@@ -155,13 +185,17 @@ public class EnvironmentView {
 	public int getNumberOfRounds() {
 		return Integer.parseInt(roundsField.getText());
 	}
-	
+
 	public int getNumberOfGames() {
 		return Integer.parseInt(gamesField.getText());
 	}
 
 	public Button getPlayButton() {
 		return playButton;
+	}
+
+	public Button[] getStatsButtons() {
+		return new Button[] { stats1, stats2, stats3, stats4, stats5, stats6, stats7, stats8, stats9, stats10 };
 	}
 
 	public static EnvironmentView getInstance() {

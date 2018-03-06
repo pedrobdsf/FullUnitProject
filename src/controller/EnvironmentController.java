@@ -8,8 +8,10 @@ import java.util.Observer;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.stage.Stage;
 import model.EnvironmentManager;
 import view.EnvironmentView;
+import view.StatisticsView;
 
 /**
  * @author Pedro Freire
@@ -17,6 +19,7 @@ import view.EnvironmentView;
  */
 public class EnvironmentController implements Observer, EventHandler<ActionEvent> {
 
+	private Loader loader = new Loader();
 	private EnvironmentView view;
 	private EnvironmentManager manager;
 
@@ -32,12 +35,22 @@ public class EnvironmentController implements Observer, EventHandler<ActionEvent
 		if (event.getSource() == view.getPlayButton()) {
 			view.clearResultField();
 			manager.runGame(view.getAgentSelectList(), view.getNumberOfRounds(), view.getNumberOfGames());
-			for (int num = 0; num < manager.getAgentList().length; num++) {
-				if (manager.getAgentList()[num] != null) {
-					view.setResultField(String.valueOf(manager.getAgentList()[num].getTotalUtility()), num);
+			for (int index = 0; index < manager.getAgentList().size(); index++) {
+				if (manager.getAgentList().get(index) != null) {
+					view.setResultField(String.valueOf(manager.getAgentList().get(index).getTotalUtility()), index);
 				}
 			}
 			view.setTotalUtility();
+		}
+		for (int index = 0; index < view.getStatsButtons().length; index++) {
+			if (event.getSource() == view.getStatsButtons()[index]) {
+				try {
+						Stage stage = loader.newDisplay("Statistics");
+						new StatisticsController(StatisticsView.getInstance(), stage, manager.getAgentList().get(index));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
 

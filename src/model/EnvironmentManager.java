@@ -3,6 +3,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 /**
@@ -13,19 +15,22 @@ public class EnvironmentManager extends Observable {
 
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
-	private Agent[] agentList;
+	List<Agent> agentList = new ArrayList<>();
 	// private ArrayList<Agent> openAgentsList;
 
 	public void runGame(String[] stratList, int numOfRounds, int numOfGames) {
-		agentList = new Agent[stratList.length];
-		for (int num = 0; num < agentList.length; num++) {
-			agentList[num] = agentManager.stringToAgent(stratList[num]);
+		int idx = 0;
+		while (idx < 10 && stratList[idx] != "") {
+			agentList.add(agentManager.stringToAgent(stratList[idx]));
+			System.out.println(stratList[idx]);
+			agentList.get(idx).setId(idx+1);
+			idx++;
 		}
 		for (int gameCount = 1; gameCount <= numOfGames; gameCount++) {
 			int count = 0;
 			for (Agent agent1 : agentList) {
-				for (int index = count; index < agentList.length; index++) {
-					Agent agent2 = agentList[index];
+				for (int index = count; index < agentList.size(); index++) {
+					Agent agent2 = agentList.get(index);
 					if (agent1 != null && agent2 != null && agent1 != agent2) {
 						if (gameCount == 1
 								|| agent1.getAcceptedAgents().contains(agent2) && agent2.getAcceptedAgents().contains(agent1)) {
@@ -81,7 +86,7 @@ public class EnvironmentManager extends Observable {
 		agent2.reset();
 	}
 
-	public Agent[] getAgentList() {
+	public List<Agent> getAgentList() {
 		return agentList;
 	}
 

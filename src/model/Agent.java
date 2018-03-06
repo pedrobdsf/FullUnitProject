@@ -18,7 +18,7 @@ import strategies.Strategy;
  */
 public class Agent {
 
-	private int id;
+	private Integer id;
 	private Strategy strat;
 	private int totalUtility;
 	private int gameUtility;
@@ -34,11 +34,11 @@ public class Agent {
 		this.totalUtility = 0;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

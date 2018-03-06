@@ -4,6 +4,7 @@
 package view;
 
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -42,28 +43,38 @@ public class StatisticsView {
 	@FXML
 	public void initialize() {
 		instance = this;
-		//initGamesPlayedChart();
-		//initUtilityGainedChart();
 	}
 
-	private void initGamesPlayedChart(Map<String, Integer> map) {
-		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Grapefruit", 13),
-				new PieChart.Data("Oranges", 25), new PieChart.Data("Plums", 10), new PieChart.Data("Pears", 22),
-				new PieChart.Data("Apples", 30));
-		gamesPlayed.getData().addAll(pieChartData);
+	public void initGamesPlayedChart(Map<String, Integer> map) {
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		Integer totalGames = 0;
+		for (Entry<String, Integer> entry : map.entrySet()) {
+			data.add(new PieChart.Data("Agent " + entry.getKey().toString(), entry.getValue()));
+			totalGames += entry.getValue();
+		}
+		gamesPlayed.getData().addAll(data);
+		this.totalGames.setText(totalGames.toString());
 	}
 
-	private void initUtilityGainedChart() {
-		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Grapefruit", 13),
-				new PieChart.Data("Oranges", 25), new PieChart.Data("Plums", 10), new PieChart.Data("Pears", 22),
-				new PieChart.Data("Apples", 30));
-		utilityGained.getData().addAll(pieChartData);
+	public void initUtilityGainedChart(Map<String, Integer> map) {
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		Integer totalUtility = 0;
+		for (Entry<String, Integer> entry : map.entrySet()) {
+			data.add(new PieChart.Data("Agent " + entry.getKey().toString(), entry.getValue()));
+			totalUtility += entry.getValue();
+		}
+		utilityGained.getData().addAll(data);
+		this.totalUtility.setText(totalUtility.toString());
 	}
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		prevButton.setOnAction(controller);
 		nextButton.setOnAction(controller);
 		exitButton.setOnAction(controller);
+	}
+	
+	public void setAgentNumber(Integer agentNumber) {
+		this.agentNumber.setText(agentNumber.toString());
 	}
 
 	public Button getNextButton() {
