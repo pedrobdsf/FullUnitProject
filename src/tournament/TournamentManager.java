@@ -3,6 +3,7 @@
  */
 package tournament;
 
+import java.util.List;
 import java.util.Observable;
 
 import agent.Agent;
@@ -19,10 +20,10 @@ public class TournamentManager extends Observable {
 	private GameMatrix matrix = new GameMatrix();
 	private Agent[] agentList;
 
-	public void runGame(String[] stratList, int numOfRounds) {
-		agentList = new Agent[stratList.length];
-		for (int num = 0; num < agentList.length; num++) {
-			agentList[num] = agentManager.stringToAgent(stratList[num]);
+	public void runGame(List<String> stratList, int numOfRounds) {
+		agentList = new Agent[stratList.size()];
+		for (int index = 0; index < agentList.length; index++) {
+			agentList[index] = agentManager.stringToAgent(stratList.get(index));
 		}
 		for (Agent agent1 : agentList) {
 			for (Agent agent2 : agentList) {
