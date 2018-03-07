@@ -27,6 +27,8 @@ public class OneVOneView {
 	@FXML
 	private Button playButton;
 	@FXML
+	private Button backButton;
+	@FXML
 	private TextField resultField1;
 	@FXML
 	private TextField resultField2;
@@ -44,6 +46,7 @@ public class OneVOneView {
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		playButton.setOnAction(controller);
+		backButton.setOnAction(controller);
 	}
 
 	public ChoiceBox<String> getAgentSelect1() {
@@ -60,6 +63,10 @@ public class OneVOneView {
 
 	public Button getPlayButton() {
 		return playButton;
+	}
+	
+	public Button getBackButton() {
+		return backButton;
 	}
 
 	public void setResultField1(String result) {

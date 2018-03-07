@@ -41,7 +41,7 @@ public class Loader extends Application {
 		controller.addDisplay("Environment", FXMLLoader.load(getClass().getResource("/view/EnvironmentFXML.fxml")));
 		controller.addDisplay("Statistics", FXMLLoader.load(getClass().getResource("/view/StatisticsFXML.fxml")));
 		controller.activate("MainMenu");
-		handleController("MainMenu", stage);
+		handleController("MainMenu");
 		stage.setScene(scene);
 		stage.setResizable(false);
 		stage.show();
@@ -49,7 +49,7 @@ public class Loader extends Application {
 
 	public void changeDisplay(String name, Stage stage) throws Exception {
 		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
-		handleController(name, stage);
+		handleController(name);
 		stage.getScene().setRoot(pane);
 	}
 
@@ -61,7 +61,7 @@ public class Loader extends Application {
 		return newStage;
 	}
 
-	private void handleController(String name, Stage stage) {
+	private void handleController(String name) {
 		if (name.equals("MainMenu")) {
 			new MainMenuController(MainMenuView.getInstance());
 		}

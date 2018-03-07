@@ -6,6 +6,7 @@ package one_v_one;
 import java.util.Observable;
 import java.util.Observer;
 
+import driver.Loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import view.OneVOneView;
@@ -16,6 +17,7 @@ import view.OneVOneView;
  */
 public class OneVOneController implements Observer, EventHandler<ActionEvent> {
 
+	private Loader loader = new Loader();
 	private OneVOneView view;
 	private OneVOneManager manager;
 
@@ -34,12 +36,20 @@ public class OneVOneController implements Observer, EventHandler<ActionEvent> {
 			view.setResultField1(String.valueOf(manager.getAgent1().getTotalUtility()));
 			view.setResultField2(String.valueOf(manager.getAgent2().getTotalUtility()));
 		}
+		if (event.getSource() == view.getBackButton()) {
+			System.out.println("Pressed");
+			try {
+				loader.changeDisplay("MainMenu", loader.getStage());
+				System.out.println("Changed display");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	public OneVOneView getView() {
