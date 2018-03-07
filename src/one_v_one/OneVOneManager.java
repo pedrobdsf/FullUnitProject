@@ -32,11 +32,14 @@ public class OneVOneManager extends Observable {
 				agent1.getStrat().choose();
 				agent2.getStrat().choose();
 				matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
+				matrix.printRound();
 				agent1.incUtility(matrix.getResult1());
 				agent2.incUtility(matrix.getResult2());
 				agent1.getStrat().setLastChoice();
 				agent2.getStrat().setLastChoice();
 			}
+			agent1.reset();
+			agent2.reset();
 		} else {
 			JOptionPane.showMessageDialog(null, "Select two agents.", "Warning", JOptionPane.WARNING_MESSAGE);
 		}

@@ -31,9 +31,9 @@ public class TournamentController implements Observer, EventHandler<ActionEvent>
 		if (event.getSource() == view.getPlayButton()) {
 			view.clearResultField();
 			manager.runGame(view.getAgentSelectList(), Integer.parseInt(view.getRoundsField().getText()));
-			for (int num = 0; num < manager.getAgentList().length; num++) {
-				if (manager.getAgentList()[num] != null) {
-					view.setResultField(String.valueOf(manager.getAgentList()[num].getTotalUtility()), num);
+			for (int index = 0; index < manager.getAgentList().length; index++) {
+				if (manager.getAgentList()[index] != null) {
+					view.setResultField(String.valueOf(manager.getAgentList()[index].getTotalUtility()), index);
 				}
 			}
 			view.setTotalUtility();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="menuAnchor" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.OneVOneView">
@@ -18,102 +20,120 @@
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 			</columnConstraints>
 			<rowConstraints>
-				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="231.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="232.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="215.0" vgrow="SOMETIMES" />
 			</rowConstraints>
 			<children>
-				<Button fx:id="playButton" mnemonicParsing="false" prefHeight="291.0" prefWidth="600.0" text="PLAY" GridPane.columnIndex="1" GridPane.rowIndex="1">
-					<font>
-						<Font size="96.0" />
-					</font>
-				</Button>
-				<GridPane fx:id="roundsGrid" GridPane.rowIndex="1">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<Label fx:id="roundsLabel" prefHeight="221.0" prefWidth="762.0" text="NUMBER OF ROUNDS" textAlignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2">
+               <children>
+                  <Label text="One V One">
+                     <font>
+                        <Font size="72.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+						<Label fx:id="agentLabel1" prefHeight="60.0" prefWidth="949.0" text="Agent 1" textAlignment="CENTER">
 							<font>
-								<Font size="48.0" />
+								<Font size="36.0" />
 							</font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
 						</Label>
-						<TextField fx:id="roundsField" prefHeight="201.0" prefWidth="632.0" GridPane.rowIndex="1" />
-					</children>
-				</GridPane>
-				<GridPane fx:id="resultGrid1" GridPane.rowIndex="2">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<TextField fx:id="resultField1" prefHeight="196.0" prefWidth="764.0" GridPane.rowIndex="1" />
-						<Label fx:id="reslutLabel1" prefHeight="241.0" prefWidth="884.0" text="Agent 1 Utility" textAlignment="CENTER">
+						<ChoiceBox fx:id="agentSelect1" prefHeight="77.0" prefWidth="540.0" style="-fx-font-size: 36px;">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="30.0" right="30.0" />
+                     </VBox.margin></ChoiceBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+						<Label fx:id="reslutLabel1" prefHeight="60.0" prefWidth="540.0" text="Agent 1 Utility" textAlignment="CENTER">
 							<font>
-								<Font size="48.0" />
+								<Font size="36.0" />
 							</font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
 						</Label>
-					</children>
-				</GridPane>
-				<GridPane fx:id="resultGrid2" GridPane.columnIndex="1" GridPane.rowIndex="2">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<TextField fx:id="resultField2" prefHeight="196.0" prefWidth="726.0" GridPane.rowIndex="1" />
-						<Label fx:id="resultLabel2" prefHeight="224.0" prefWidth="956.0" text="Agent 2 Utility" textAlignment="CENTER">
+						<TextField fx:id="resultField1" prefHeight="77.0" prefWidth="540.0">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="36.0" />
+                     </font></TextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+						<Label fx:id="agentLabel2" prefHeight="60.0" prefWidth="944.0" text="Agent 2" textAlignment="CENTER">
 							<font>
-								<Font size="48.0" />
+								<Font size="36.0" />
 							</font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
 						</Label>
-					</children>
-				</GridPane>
-				<GridPane fx:id="agentGrid1">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<ChoiceBox fx:id="agentSelect1" prefHeight="335.0" prefWidth="638.0" GridPane.rowIndex="1" />
-						<Label fx:id="agentLabel1" prefHeight="232.0" prefWidth="949.0" text="Agent 1" textAlignment="CENTER">
+						<ChoiceBox fx:id="agentSelect2" prefHeight="77.0" prefWidth="540.0" style="-fx-font-size: 36px;">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="30.0" right="30.0" />
+                     </VBox.margin></ChoiceBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+						<Label fx:id="resultLabel2" prefHeight="60.0" prefWidth="540.0" text="Agent 2 Utility" textAlignment="CENTER">
 							<font>
-								<Font size="48.0" />
+								<Font size="36.0" />
 							</font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
 						</Label>
-					</children>
-				</GridPane>
-				<GridPane fx:id="agentGrid2" GridPane.columnIndex="1">
-					<columnConstraints>
-						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints />
-					</columnConstraints>
-					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-					</rowConstraints>
-					<children>
-						<ChoiceBox fx:id="agentSelect2" prefHeight="372.0" prefWidth="723.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-						<Label fx:id="agentLabel2" prefHeight="351.0" prefWidth="944.0" text="Agent 2" textAlignment="CENTER" GridPane.columnIndex="1">
+						<TextField fx:id="resultField2" prefHeight="77.0" prefWidth="540.0">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="30.0" right="30.0" />
+                     </VBox.margin></TextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+               <children>
+						<Label fx:id="roundsLabel" prefHeight="60.0" prefWidth="762.0" text="Number of Rounds" textAlignment="CENTER">
 							<font>
-								<Font size="48.0" />
+								<Font size="36.0" />
 							</font>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
 						</Label>
-					</children>
-				</GridPane>
+						<TextField fx:id="roundsField" prefHeight="77.0" prefWidth="632.0">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+      				<Button fx:id="playButton" mnemonicParsing="false" prefHeight="137.0" prefWidth="300.0" text="PLAY">
+      					<font>
+      						<Font size="64.0" />
+      					</font>
+      				</Button>
+               </children>
+            </VBox>
 			</children>
 		</GridPane>
 	</children>

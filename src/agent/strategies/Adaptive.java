@@ -37,7 +37,7 @@ public class Adaptive extends Strategy {
 
 		if (lastChoice != null) {
 			matrix.evaluate(lastChoice, opponent.getLastChoice());
-			if (matrix.getResult1() == 3 || matrix.getResult1() == 1) {
+			if (matrix.getResult1() == 5 || matrix.getResult1() == 1) {
 				totalDefectGain += matrix.getResult1();
 				if (defectCount != 0) {
 					avgDefectScore = totalDefectGain / defectCount;

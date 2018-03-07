@@ -35,11 +35,11 @@ public class OneVOneView {
 	public void initialize() {
 		instance = this;
 		agentSelect1.getItems().removeAll(agentSelect1.getItems());
-		agentSelect1.getItems().addAll("Always Defect", "Always Cooperate", "Random", "Tit For Tat");
-		agentSelect1.getSelectionModel().select("Always Defect");
+		agentSelect1.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov", "Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
+		agentSelect1.getSelectionModel().select("Adaptive");
 		agentSelect2.getItems().removeAll(agentSelect1.getItems());
-		agentSelect2.getItems().addAll("Always Defect", "Always Cooperate", "Random", "Tit For Tat");
-		agentSelect2.getSelectionModel().select("Always Defect");
+		agentSelect2.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov", "Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
+		agentSelect2.getSelectionModel().select("Adaptive");
 	}
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
