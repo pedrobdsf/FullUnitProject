@@ -3,6 +3,7 @@
  */
 package tournament;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -18,15 +19,20 @@ public class TournamentManager extends Observable {
 
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
-	private Agent[] agentList;
+	private List<Agent> agentList = new ArrayList<>();;
 
 	public void runGame(List<String> stratList, int numOfRounds) {
-		agentList = new Agent[stratList.size()];
-		for (int index = 0; index < agentList.length; index++) {
-			agentList[index] = agentManager.stringToAgent(stratList.get(index));
+		int idx = 0;
+		while (idx < stratList.size() && stratList.get(idx) != "") {
+			agentList.add(agentManager.stringToAgent(stratList.get(idx)));
+			System.out.println(stratList.get(idx));
+			agentList.get(idx).setId(idx + 1);
+			idx++;
 		}
+		int count = 0;
 		for (Agent agent1 : agentList) {
-			for (Agent agent2 : agentList) {
+			for (int index = count; index < agentList.size(); index++) {
+				Agent agent2 = agentList.get(index);
 				if (agent1 != null && agent2 != null && agent1 != agent2) {
 					agent1.setOpponent(agent2);
 					agent2.setOpponent(agent1);
@@ -40,15 +46,22 @@ public class TournamentManager extends Observable {
 						agent1.getStrat().setLastChoice();
 						agent2.getStrat().setLastChoice();
 					}
+					agent1.mapOpponent(agent2, agent1.getGameUtility() / numOfRounds);
+					agent2.mapOpponent(agent1, agent2.getGameUtility() / numOfRounds);
 					agent1.reset();
 					agent2.reset();
 					System.out.println();
 				}
 			}
+			count++;
 		}
 	}
+	
+	public void clearAgentList() {
+		agentList.clear();
+	}
 
-	public Agent[] getAgentList() {
+	public List<Agent> getAgentList() {
 		return agentList;
 	}
 

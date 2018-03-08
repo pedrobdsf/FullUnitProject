@@ -107,7 +107,7 @@
                               <Insets left="50.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="roundsField" alignment="CENTER" prefHeight="51.0" prefWidth="69.0" text="0">
+                        <TextField fx:id="roundsField" alignment="CENTER" prefHeight="51.0" prefWidth="69.0" text="1">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -162,14 +162,14 @@
                         </HBox>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="460.0" prefWidth="1200.0" vbarPolicy="ALWAYS">
                            <content>
-                              <VBox fx:id="agentsListBox" prefHeight="460.0" prefWidth="1200.0" />
+                              <VBox fx:id="agentsBoxListBox" prefHeight="460.0" prefWidth="1200.0" />
                            </content>
                         </ScrollPane>
                      </children>
                   </VBox>
                </children>
             </GridPane>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
                <children>
                   <Label alignment="CENTER" prefHeight="51.0" prefWidth="150.0" text="Total Agents">
                      <font>
@@ -186,7 +186,7 @@
                         <Font size="24.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="30.0" />
+                        <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
                   <TextField fx:id="totalUtilityField" alignment="CENTER" prefHeight="51.0" prefWidth="150.0">
@@ -194,6 +194,14 @@
                         <Font size="24.0" />
                      </font>
                   </TextField>
+                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" text="CLEAR ALL">
+                     <HBox.margin>
+                        <Insets left="350.0" right="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
                </children>
             </HBox>
          </children>
