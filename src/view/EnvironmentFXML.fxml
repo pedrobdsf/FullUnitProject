@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EnvironmentView">
@@ -19,231 +22,201 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="715.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="395.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="715.0" minHeight="10.0" prefHeight="611.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="395.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane>
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2">
                <children>
-                  <Label alignment="CENTER" prefHeight="234.0" prefWidth="716.0" text="SELECT AGENTS">
+                  <Label text="Environment">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="72.0" />
                      </font>
-                  </Label>
-                  <ChoiceBox fx:id="agentSelect1" prefHeight="117.0" prefWidth="804.0" GridPane.rowIndex="1" />
-                  <ChoiceBox fx:id="agentSelect2" prefHeight="176.0" prefWidth="861.0" GridPane.rowIndex="2" />
-                  <ChoiceBox fx:id="agentSelect3" prefHeight="246.0" prefWidth="860.0" GridPane.rowIndex="3" />
-                  <ChoiceBox fx:id="agentSelect4" prefHeight="262.0" prefWidth="1027.0" GridPane.rowIndex="4" />
-                  <ChoiceBox fx:id="agentSelect5" prefHeight="266.0" prefWidth="964.0" GridPane.rowIndex="5" />
-                  <ChoiceBox fx:id="agentSelect6" prefHeight="201.0" prefWidth="841.0" GridPane.rowIndex="6" />
-                  <ChoiceBox fx:id="agentSelect7" prefHeight="229.0" prefWidth="894.0" GridPane.rowIndex="7" />
-                  <ChoiceBox fx:id="agentSelect8" prefHeight="253.0" prefWidth="839.0" GridPane.rowIndex="8" />
-                  <ChoiceBox fx:id="agentSelect9" prefHeight="204.0" prefWidth="921.0" GridPane.rowIndex="9" />
-                  <ChoiceBox fx:id="agentSelect10" prefHeight="158.0" prefWidth="823.0" GridPane.rowIndex="10" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.columnIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <children>
-                        <TextField fx:id="resultField1" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats1" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
-                     <children>
-                        <TextField fx:id="resultField2" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats2" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
-                     <children>
-                        <TextField fx:id="resultField3" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats3" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
-                     <children>
-                        <TextField fx:id="resultField4" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats4" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
-                     <children>
-                        <TextField fx:id="resultField5" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats5" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
-                     <children>
-                        <TextField fx:id="resultField6" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats6" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="7">
-                     <children>
-                        <TextField fx:id="resultField7" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats7" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="8">
-                     <children>
-                        <TextField fx:id="resultField8" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats8" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="9">
-                     <children>
-                        <TextField fx:id="resultField9" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats9" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="10">
-                     <children>
-                        <TextField fx:id="resultField10" prefHeight="65.0" prefWidth="537.0">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="stats10" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="STATS" />
-                     </children>
-                  </HBox>
-                  <Label alignment="CENTER" prefHeight="257.0" prefWidth="947.0" text="TOTAL UTILITY GAINED PER AGENT">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
                   </Label>
                </children>
-            </GridPane>
-            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" text="BACK">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="30.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <GridPane GridPane.columnSpan="2" GridPane.rowIndex="1">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="210.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="522.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="547.0" minHeight="10.0" prefHeight="510.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="playButton" mnemonicParsing="false" prefHeight="203.0" prefWidth="620.0" text="PLAY">
+                  <Label prefHeight="51.0" prefWidth="200.0" text="Select Agents">
                      <font>
-                        <Font size="36.0" />
+                        <Font size="24.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <ChoiceBox fx:id="agentSelect" prefHeight="51.0" prefWidth="400.0" style="-fx-font-size: 24px;">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <Button fx:id="plusButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" text="+">
+                           <font>
+                              <Font name="Consolas" size="24.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="addField" alignment="CENTER" prefHeight="51.0" prefWidth="55.0" text="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="minusButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="50.0" text="-">
+                           <font>
+                              <Font name="Consolas" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="85.0" text="ADD">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label prefHeight="51.0" prefWidth="70.0" text="Rounds">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="roundsField" alignment="CENTER" prefHeight="51.0" prefWidth="69.0" text="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Label prefHeight="51.0" prefWidth="70.0" text="Games">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="gamesField" alignment="CENTER" prefHeight="51.0" prefWidth="69.0" text="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="playButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="100.0" text="PLAY">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <HBox prefHeight="51.0" prefWidth="1200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="100.0" text="ID">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="570.0" text="Strategy">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="280.0" text="Utility">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="150.0" text="Statistics">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="460.0" prefWidth="1200.0" vbarPolicy="ALWAYS">
+                           <content>
+                              <VBox fx:id="agentsBoxListBox" prefHeight="460.0" prefWidth="1200.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+               <children>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="150.0" text="Total Agents">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="totalAgentsField" alignment="CENTER" prefHeight="51.0" prefWidth="150.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="150.0" text="Total Utility">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="totalUtilityField" alignment="CENTER" prefHeight="51.0" prefWidth="150.0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="clearButton" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" text="CLEAR ALL">
+                     <HBox.margin>
+                        <Insets left="350.0" right="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="24.0" />
                      </font>
                   </Button>
-                  <GridPane GridPane.columnIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="167.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="133.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label alignment="CENTER_RIGHT" prefHeight="85.0" prefWidth="161.0" text="TOTAL UTILITY">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="totalUtilityField" prefHeight="171.0" prefWidth="218.0" GridPane.columnIndex="1">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </TextField>
-                     </children>
-                  </GridPane>
                </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="460.0" text="NUMBER OF ROUNDS PER GAME">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="roundsField" prefHeight="124.0" prefWidth="362.0" GridPane.rowIndex="1" />
-                  <TextField fx:id="gamesField" prefHeight="124.0" prefWidth="362.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label alignment="CENTER" prefHeight="166.0" prefWidth="460.0" text="NUMBER OF GAMES PER AGENT" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </GridPane>
+            </HBox>
          </children>
       </GridPane>
    </children>

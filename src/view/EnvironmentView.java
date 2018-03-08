@@ -3,12 +3,23 @@
  */
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 /**
  * @author Pedro Freire
@@ -19,157 +30,178 @@ public class EnvironmentView {
 	private static EnvironmentView instance = null;
 
 	@FXML
-	private ChoiceBox<String> agentSelect1;
-	@FXML
-	private ChoiceBox<String> agentSelect2;
-	@FXML
-	private ChoiceBox<String> agentSelect3;
-	@FXML
-	private ChoiceBox<String> agentSelect4;
-	@FXML
-	private ChoiceBox<String> agentSelect5;
-	@FXML
-	private ChoiceBox<String> agentSelect6;
-	@FXML
-	private ChoiceBox<String> agentSelect7;
-	@FXML
-	private ChoiceBox<String> agentSelect8;
-	@FXML
-	private ChoiceBox<String> agentSelect9;
-	@FXML
-	private ChoiceBox<String> agentSelect10;
-	@FXML
-	private TextField resultField1;
-	@FXML
-	private TextField resultField2;
-	@FXML
-	private TextField resultField3;
-	@FXML
-	private TextField resultField4;
-	@FXML
-	private TextField resultField5;
-	@FXML
-	private TextField resultField6;
-	@FXML
-	private TextField resultField7;
-	@FXML
-	private TextField resultField8;
-	@FXML
-	private TextField resultField9;
-	@FXML
-	private TextField resultField10;
+	private ChoiceBox<String> agentSelect;
 	@FXML
 	private TextField roundsField;
-	@FXML
-	private Button stats1;
-	@FXML
-	private Button stats2;
-	@FXML
-	private Button stats3;
-	@FXML
-	private Button stats4;
-	@FXML
-	private Button stats5;
-	@FXML
-	private Button stats6;
-	@FXML
-	private Button stats7;
-	@FXML
-	private Button stats8;
-	@FXML
-	private Button stats9;
-	@FXML
-	private Button stats10;
 	@FXML
 	private TextField gamesField;
 	@FXML
 	private Button playButton;
 	@FXML
+	private Button plusButton;
+	@FXML
+	private TextField addField;
+	@FXML
+	private Button minusButton;
+	@FXML
+	private Button addButton;
+	@FXML
+	private Button clearButton;
+	@FXML
+	private Button backButton;
+	@FXML
+	private VBox agentsBoxListBox;
+	@FXML
+	private TextField totalAgentsField;
+	@FXML
 	private TextField totalUtilityField;
+
+	private List<HBox> agentsBoxList;
+	private List<String> agentsList;
+	private List<Label> idList;
+	private List<TextField> resultsList;
+	private List<Button> statsList;
+	private List<Button> deleteList;
 
 	@FXML
 	public void initialize() {
 		instance = this;
-		agentSelect1.getItems().removeAll(agentSelect1.getItems());
-		agentSelect1.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
+		agentSelect.getItems().removeAll(agentSelect.getItems());
+		agentSelect.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
 				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect1.getSelectionModel().select("");
-		agentSelect2.getItems().removeAll(agentSelect2.getItems());
-		agentSelect2.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect2.getSelectionModel().select("");
-		agentSelect3.getItems().removeAll(agentSelect3.getItems());
-		agentSelect3.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect3.getSelectionModel().select("");
-		agentSelect4.getItems().removeAll(agentSelect4.getItems());
-		agentSelect4.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect4.getSelectionModel().select("");
-		agentSelect5.getItems().removeAll(agentSelect5.getItems());
-		agentSelect5.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect5.getSelectionModel().select("");
-		agentSelect6.getItems().removeAll(agentSelect6.getItems());
-		agentSelect6.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect6.getSelectionModel().select("");
-		agentSelect7.getItems().removeAll(agentSelect7.getItems());
-		agentSelect7.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect7.getSelectionModel().select("");
-		agentSelect8.getItems().removeAll(agentSelect8.getItems());
-		agentSelect8.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect8.getSelectionModel().select("");
-		agentSelect9.getItems().removeAll(agentSelect9.getItems());
-		agentSelect9.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect9.getSelectionModel().select("");
-		agentSelect10.getItems().removeAll(agentSelect10.getItems());
-		agentSelect10.getItems().addAll("", "Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
-				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
-		agentSelect10.getSelectionModel().select("");
+		agentSelect.getSelectionModel().select("Adaptive");
+		agentsBoxList = new ArrayList<>();
+		agentsList = new ArrayList<>();
+		idList = new ArrayList<>();
+		resultsList = new ArrayList<>();
+		statsList = new ArrayList<>();
+		deleteList = new ArrayList<>();
 	}
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		playButton.setOnAction(controller);
-		stats1.setOnAction(controller);
-		stats2.setOnAction(controller);
-		stats3.setOnAction(controller);
-		stats4.setOnAction(controller);
-		stats5.setOnAction(controller);
-		stats6.setOnAction(controller);
-		stats7.setOnAction(controller);
-		stats8.setOnAction(controller);
-		stats9.setOnAction(controller);
-		stats10.setOnAction(controller);
+		plusButton.setOnAction(controller);
+		minusButton.setOnAction(controller);
+		addButton.setOnAction(controller);
+		clearButton.setOnAction(controller);
+		backButton.setOnAction(controller);
 	}
 
-	public String[] getAgentSelectList() {
-		return new String[] { agentSelect1.getValue(), agentSelect2.getValue(), agentSelect3.getValue(),
-				agentSelect4.getValue(), agentSelect5.getValue(), agentSelect6.getValue(), agentSelect7.getValue(),
-				agentSelect8.getValue(), agentSelect9.getValue(), agentSelect10.getValue() };
+	public void addAgentToList(String strat) {
+		int id = agentsBoxList.size() + 1;
+		agentsBoxList.add(addAgent(String.valueOf(id), strat));
+		agentsBoxListBox.getChildren().add(agentsBoxList.get(id - 1));
 	}
 
-	public String[] getResultsList() {
-		return new String[] { resultField1.getText(), resultField2.getText(), resultField3.getText(),
-				resultField4.getText(), resultField5.getText(), resultField6.getText(), resultField7.getText(),
-				resultField8.getText(), resultField9.getText(), resultField10.getText() };
+	private HBox addAgent(String id, String strat) {
+		HBox agent = new HBox();
+		Label idLb = new Label(id);
+		idLb.setPrefSize(150, 35);
+		idLb.setPadding(new Insets(0, 0, 0, 70));
+		idLb.setFont(new Font(24));
+		Label stratLb = new Label(strat);
+		stratLb.setPrefSize(550, 35);
+		stratLb.setPadding(new Insets(0, 0, 0, 170));
+		stratLb.setFont(new Font(24));
+		TextField utilityTf = new TextField();
+		utilityTf.setPrefSize(280, 35);
+		utilityTf.setPadding(new Insets(0, 0, 0, 30));
+		utilityTf.setFont(new Font(24));
+		Button statsBt = new Button("STATS");
+		statsBt.setPrefSize(150, 35);
+		statsBt.setFont(new Font(15));
+		Button deleteBt = new Button("X");
+		deleteBt.setPrefSize(50, 35);
+		deleteBt.setFont(new Font(15));
+		if (Integer.valueOf(id) % 2 == 0) {
+			agent.setBackground(new Background(new BackgroundFill(Color.WHITE, null, null)));
+		} else {
+			agent.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
+		}
+		agent.getChildren().addAll(idLb, stratLb, utilityTf, statsBt, deleteBt);
+		agentsList.add(strat);
+		idList.add(idLb);
+		resultsList.add(utilityTf);
+		statsList.add(statsBt);
+		deleteList.add(deleteBt);
+		return agent;
 	}
 
-	public void setResultField(String result, int num) {
-		TextField[] fields = new TextField[] { resultField1, resultField2, resultField3, resultField4, resultField5,
-				resultField6, resultField7, resultField8, resultField9, resultField10 };
-		fields[num].setText(result);
+	public void addButtonHandler(EventHandler<ActionEvent> controller) {
+		int index = agentsList.size() - 1;
+		statsList.get(index).setOnAction(controller);
+		deleteList.get(index).setOnAction(controller);
+	}
+
+	public String getAgentSelect() {
+		return agentSelect.getValue();
+	}
+
+	public List<String> getAgentsList() {
+		return agentsList;
+	}
+
+	public List<String> getResultsList() {
+		List<String> list = new ArrayList<>();
+		for (TextField tf : resultsList) {
+			list.add(tf.getText());
+		}
+		return list;
+	}
+
+	public void setResultField(String result, int index) {
+		resultsList.get(index).setText(result);
+	}
+
+	public List<Button> getStatsList() {
+		return statsList;
+	}
+
+	public List<Button> getDeleteList() {
+		return deleteList;
+	}
+
+	public void deleteAgent(int index) throws Exception{
+		agentsBoxListBox.getChildren().remove(index);
+		agentsBoxList.remove(index);
+		agentsList.remove(index);
+		idList.remove(index);
+		resultsList.remove(index);
+		statsList.remove(index);
+		deleteList.remove(index);
+		for (int idx = 0; idx < agentsList.size(); idx++) {
+			if (idx >= index) {
+				int temp = Integer.valueOf(idList.get(idx).getText());
+				idList.get(idx).setText(String.valueOf(temp - 1));
+				if ((idx + 1) % 2 == 0) {
+					agentsBoxList.get(idx).setBackground(new Background(new BackgroundFill(Color.WHITE, null, null)));
+				} else {
+					agentsBoxList.get(idx).setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
+				}
+			}
+		}
+	}
+	
+	public void clearAgentList() {
+			agentsBoxListBox.getChildren().clear();
+			agentsBoxList.clear();
+			agentsList.clear();
+			idList.clear();
+			resultsList.clear();
+			statsList.clear();
+			deleteList.clear();
 	}
 
 	public void clearResultField() {
-		TextField[] fields = new TextField[] { resultField1, resultField2, resultField3, resultField4, resultField5,
-				resultField6, resultField7, resultField8, resultField9, resultField10 };
-		for (TextField field : fields) {
-			field.setText("");
+		if (resultsList.size() > 0) {
+			for (TextField tf : resultsList) {
+				tf.setText("");
+			}
 		}
+	}
+	
+	public void setTotalAgents() {
+		totalAgentsField.setText(String.valueOf(agentsList.size()));
 	}
 
 	public void setTotalUtility() {
@@ -182,20 +214,54 @@ public class EnvironmentView {
 		totalUtilityField.setText(String.valueOf(value));
 	}
 
-	public int getNumberOfRounds() {
-		return Integer.parseInt(roundsField.getText());
+	public TextField getRoundsField() {
+		return roundsField;
+	}
+	
+	public TextField getGamesField() {
+		return gamesField;
 	}
 
-	public int getNumberOfGames() {
-		return Integer.parseInt(gamesField.getText());
+	public TextField getAddField() {
+		return addField;
+	}
+
+	public void incAddField() {
+		int temp = Integer.valueOf(addField.getText());
+		temp++;
+		addField.setText(String.valueOf(temp));
+	}
+
+	public void decAddField() {
+		int temp = Integer.valueOf(addField.getText());
+		if (temp > 1) {
+			temp--;
+			addField.setText(String.valueOf(temp));
+		}
 	}
 
 	public Button getPlayButton() {
 		return playButton;
 	}
 
-	public Button[] getStatsButtons() {
-		return new Button[] { stats1, stats2, stats3, stats4, stats5, stats6, stats7, stats8, stats9, stats10 };
+	public Button getPlusButton() {
+		return plusButton;
+	}
+
+	public Button getMinusButton() {
+		return minusButton;
+	}
+
+	public Button getAddButton() {
+		return addButton;
+	}
+	
+	public Button getClearButton() {
+		return clearButton;
+	}
+
+	public Button getBackButton() {
+		return backButton;
 	}
 
 	public static EnvironmentView getInstance() {

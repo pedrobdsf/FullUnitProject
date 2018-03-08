@@ -20,14 +20,12 @@ public class EnvironmentManager extends Observable {
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
 	List<Agent> agentList = new ArrayList<>();
-	// private ArrayList<Agent> openAgentsList;
 
-	public void runGame(String[] stratList, int numOfRounds, int numOfGames) {
+	public void runGame(List<String> stratList, int numOfRounds, int numOfGames) {
 		int idx = 0;
-		while (idx < 10 && stratList[idx] != "") {
-			agentList.add(agentManager.stringToAgent(stratList[idx]));
-			System.out.println(stratList[idx]);
-			agentList.get(idx).setId(idx+1);
+		for (String strat : stratList) {
+			agentList.add(agentManager.stringToAgent(strat));
+			agentList.get(idx).setId(idx + 1);
 			idx++;
 		}
 		for (int gameCount = 1; gameCount <= numOfGames; gameCount++) {
@@ -88,6 +86,10 @@ public class EnvironmentManager extends Observable {
 		}
 		agent1.reset();
 		agent2.reset();
+	}
+	
+	public void clearAgentList() {
+		agentList.clear();
 	}
 
 	public List<Agent> getAgentList() {
