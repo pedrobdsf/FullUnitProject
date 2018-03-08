@@ -23,9 +23,8 @@ public class TournamentManager extends Observable {
 
 	public void runGame(List<String> stratList, int numOfRounds) {
 		int idx = 0;
-		while (idx < stratList.size() && stratList.get(idx) != "") {
-			agentList.add(agentManager.stringToAgent(stratList.get(idx)));
-			System.out.println(stratList.get(idx));
+		for (String strat : stratList) {
+			agentList.add(agentManager.stringToAgent(strat));
 			agentList.get(idx).setId(idx + 1);
 			idx++;
 		}

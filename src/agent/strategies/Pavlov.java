@@ -24,7 +24,7 @@ public class Pavlov extends Strategy {
 		System.out.println(matrix.getResult1());
 		if (opponent.getLastChoice() == null) {
 			currChoice = "C";
-		} else if (matrix.getResult1() == 3 || matrix.getResult1() == 2) {
+		} else if (matrix.getResult1() == 5 || matrix.getResult1() == 3) {
 			currChoice = lastChoice;
 		} else if (lastChoice.equals("C")) {
 			currChoice = "D";
