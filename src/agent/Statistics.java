@@ -31,11 +31,11 @@ public class Statistics {
 			gamesPlayed.put(agent, gamesInc);
 		}
 	}
-	
+
 	public Map<Agent, Integer> getGamesPlayed() {
 		return gamesPlayed;
 	}
-	
+
 	public Map<Agent, Integer> getUtilityGained() {
 		return utilityGained;
 	}

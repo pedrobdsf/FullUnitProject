@@ -5,7 +5,6 @@ package environment;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 
 import agent.Agent;
 import agent.AgentManager;
@@ -15,7 +14,7 @@ import agent.GameMatrix;
  * @author Pedro Freire
  *
  */
-public class EnvironmentManager extends Observable {
+public class EnvironmentManager {
 
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
@@ -36,27 +35,11 @@ public class EnvironmentManager extends Observable {
 					if (agent1 != null && agent2 != null && agent1 != agent2) {
 						if (gameCount == 1
 								|| agent1.getAcceptedAgents().contains(agent2) && agent2.getAcceptedAgents().contains(agent1)) {
-							System.out.println("Accepted agents");
 							runRounds(agent1, agent2, numOfRounds);
-							System.out.println("Finished rounds");
-							System.out.println();
-						} else {
-							System.out.println("Rejected agents");
 						}
 					}
 				}
-				if (agent1 != null) {
-					agent1.setNewAvgUtility();
-					System.out.println(agent1.getNewAvgUtility() + " " + agent1.getAvgUtility());
-					if (agent1.getNewAvgUtility() < agent1.getAvgUtility()) {
-						System.out.println("Decrement threshold");
-						agent1.decAvgUtilityThreshold();
-					}
-					agent1.setAvgUtility(agent1.getNewAvgUtility());
-					System.out.println("Keep threshold");
-					agent1.printMap(agent1.getStats().getGamesPlayed());
-					agent1.printMap(agent1.getStats().getUtilityGained());
-				}
+				agent1.setAvgUtility();
 				count++;
 			}
 		}
@@ -70,7 +53,6 @@ public class EnvironmentManager extends Observable {
 			agent1.getStrat().choose();
 			agent2.getStrat().choose();
 			matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
-			matrix.printRound();
 			agent1.incUtility(matrix.getResult1());
 			agent2.incUtility(matrix.getResult2());
 			agent1.getStrat().setLastChoice();
@@ -87,7 +69,7 @@ public class EnvironmentManager extends Observable {
 		agent1.reset();
 		agent2.reset();
 	}
-	
+
 	public void clearAgentList() {
 		agentList.clear();
 	}

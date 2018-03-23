@@ -19,7 +19,7 @@ import agent.strategies.TitForTwoTats;
  *
  */
 public class AgentManager {
-	
+
 	public Agent stringToAgent(String strat) {
 		switch (strat) {
 		case "Adaptive":
@@ -46,5 +46,5 @@ public class AgentManager {
 			return null;
 		}
 	}
-	
+
 }

@@ -78,7 +78,7 @@ public class Loader extends Application {
 			new EnvironmentController(manager, EnvironmentView.getInstance());
 		}
 	}
-	
+
 	public Stage getStage() {
 		return stage;
 	}

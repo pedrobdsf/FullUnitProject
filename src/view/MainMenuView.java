@@ -23,7 +23,7 @@ public class MainMenuView {
 	@FXML
 	private Button environmentButton;
 	@FXML
-	private Button infoButton;
+	private Button helpButton;
 
 	@FXML
 	public void initialize() {
@@ -34,7 +34,7 @@ public class MainMenuView {
 		oneVOneButton.setOnAction(controller);
 		tournamentButton.setOnAction(controller);
 		environmentButton.setOnAction(controller);
-		infoButton.setOnAction(controller);
+		helpButton.setOnAction(controller);
 	}
 
 	public Button getOneVOneButton() {
@@ -49,8 +49,8 @@ public class MainMenuView {
 		return environmentButton;
 	}
 
-	public Button getInfoButton() {
-		return infoButton;
+	public Button getHelpButton() {
+		return helpButton;
 	}
 
 	public static MainMenuView getInstance() {

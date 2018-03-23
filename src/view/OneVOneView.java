@@ -37,10 +37,12 @@ public class OneVOneView {
 	public void initialize() {
 		instance = this;
 		agentSelect1.getItems().removeAll(agentSelect1.getItems());
-		agentSelect1.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov", "Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
+		agentSelect1.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
+				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
 		agentSelect1.getSelectionModel().select("Adaptive");
 		agentSelect2.getItems().removeAll(agentSelect1.getItems());
-		agentSelect2.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov", "Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
+		agentSelect2.getItems().addAll("Adaptive", "Always Defect", "Always Cooperate", "Gradual", "Grudger", "Pavlov",
+				"Random", "Soft Grudger", "Tit For Tat", "Tit For Two Tats");
 		agentSelect2.getSelectionModel().select("Adaptive");
 	}
 
@@ -64,7 +66,7 @@ public class OneVOneView {
 	public Button getPlayButton() {
 		return playButton;
 	}
-	
+
 	public Button getBackButton() {
 		return backButton;
 	}

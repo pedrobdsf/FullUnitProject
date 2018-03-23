@@ -3,8 +3,6 @@
  */
 package one_v_one;
 
-import java.util.Observable;
-
 import javax.swing.JOptionPane;
 
 import agent.Agent;
@@ -15,7 +13,7 @@ import agent.GameMatrix;
  * @author Pedro Freire
  *
  */
-public class OneVOneManager extends Observable {
+public class OneVOneManager {
 
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
@@ -32,7 +30,6 @@ public class OneVOneManager extends Observable {
 				agent1.getStrat().choose();
 				agent2.getStrat().choose();
 				matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
-				matrix.printRound();
 				agent1.incUtility(matrix.getResult1());
 				agent2.incUtility(matrix.getResult2());
 				agent1.getStrat().setLastChoice();

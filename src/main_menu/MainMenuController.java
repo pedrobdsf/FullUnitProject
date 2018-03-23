@@ -3,6 +3,8 @@
  */
 package main_menu;
 
+import javax.swing.JOptionPane;
+
 import driver.Loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -45,7 +47,10 @@ public class MainMenuController implements EventHandler<ActionEvent> {
 				e.printStackTrace();
 			}
 		}
-		if (event.getSource() == view.getInfoButton()) {
+		if (event.getSource() == view.getHelpButton()) {
+			JOptionPane.showMessageDialog(null,
+					"<html><font size='6'>This program allows you to witness the results of an Iterated Prisoner's Dilemma."
+							+ "<br><font size='6'>Hover over the buttons of the three game modes to find out more information.");
 		}
 	}
 

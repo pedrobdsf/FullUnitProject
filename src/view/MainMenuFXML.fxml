@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -27,7 +28,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="infoButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 50;">
+                  <Button fx:id="helpButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 50;">
                      <VBox.margin>
                         <Insets left="15.0" top="15.0" />
                      </VBox.margin>
@@ -41,6 +42,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <tooltip>
+                        <Tooltip text="Help" />
+                     </tooltip>
                   </Button>
                </children>
             </VBox>
@@ -77,6 +81,9 @@
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
+                           <tooltip>
+                              <Tooltip anchorLocation="WINDOW_BOTTOM_LEFT" contentDisplay="TOP" prefWidth="500.0" text="In Tournament mode you can select any number of agents with an attributed strategy, and have each agent play one game against every other agent." wrapText="true" />
+                           </tooltip>
                         </Button>
                      </children>
                   </VBox>
@@ -89,6 +96,9 @@
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
+                           <tooltip>
+                              <Tooltip anchorLocation="WINDOW_BOTTOM_LEFT" contentDisplay="TOP" prefWidth="500.0" text="In Environment mode you can select any number of agents with an attributed strategy, and have them choose the agents they play against based on past experiences." wrapText="true" />
+                           </tooltip>
                         </Button>
                      </children>
                   </VBox>
@@ -101,6 +111,9 @@
                            <VBox.margin>
                               <Insets bottom="30.0" />
                            </VBox.margin>
+                           <tooltip>
+                              <Tooltip anchorLocation="WINDOW_BOTTOM_LEFT" contentDisplay="TOP" prefWidth="500.0" text="In One V One mode you can give two agents a strategy each, and let them play against each other for an arbitrary number of rounds. " wrapText="true" />
+                           </tooltip>
                         </Button>
                      </children>
                   </VBox>

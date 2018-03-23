@@ -159,7 +159,7 @@ public class TournamentView {
 		return deleteList;
 	}
 
-	public void deleteAgent(int index) throws Exception{
+	public void deleteAgent(int index) throws Exception {
 		agentsBoxListBox.getChildren().remove(index);
 		agentsBoxList.remove(index);
 		agentsList.remove(index);
@@ -179,15 +179,15 @@ public class TournamentView {
 			}
 		}
 	}
-	
+
 	public void clearAgentList() {
-			agentsBoxListBox.getChildren().clear();
-			agentsBoxList.clear();
-			agentsList.clear();
-			idList.clear();
-			resultsList.clear();
-			statsList.clear();
-			deleteList.clear();
+		agentsBoxListBox.getChildren().clear();
+		agentsBoxList.clear();
+		agentsList.clear();
+		idList.clear();
+		resultsList.clear();
+		statsList.clear();
+		deleteList.clear();
 	}
 
 	public void clearResultField() {
@@ -197,7 +197,7 @@ public class TournamentView {
 			}
 		}
 	}
-	
+
 	public void setTotalAgents() {
 		totalAgentsField.setText(String.valueOf(agentsList.size()));
 	}
@@ -249,7 +249,7 @@ public class TournamentView {
 	public Button getAddButton() {
 		return addButton;
 	}
-	
+
 	public Button getClearButton() {
 		return clearButton;
 	}

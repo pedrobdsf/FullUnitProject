@@ -161,7 +161,7 @@ public class EnvironmentView {
 		return deleteList;
 	}
 
-	public void deleteAgent(int index) throws Exception{
+	public void deleteAgent(int index) throws Exception {
 		agentsBoxListBox.getChildren().remove(index);
 		agentsBoxList.remove(index);
 		agentsList.remove(index);
@@ -181,15 +181,15 @@ public class EnvironmentView {
 			}
 		}
 	}
-	
+
 	public void clearAgentList() {
-			agentsBoxListBox.getChildren().clear();
-			agentsBoxList.clear();
-			agentsList.clear();
-			idList.clear();
-			resultsList.clear();
-			statsList.clear();
-			deleteList.clear();
+		agentsBoxListBox.getChildren().clear();
+		agentsBoxList.clear();
+		agentsList.clear();
+		idList.clear();
+		resultsList.clear();
+		statsList.clear();
+		deleteList.clear();
 	}
 
 	public void clearResultField() {
@@ -199,7 +199,7 @@ public class EnvironmentView {
 			}
 		}
 	}
-	
+
 	public void setTotalAgents() {
 		totalAgentsField.setText(String.valueOf(agentsList.size()));
 	}
@@ -217,7 +217,7 @@ public class EnvironmentView {
 	public TextField getRoundsField() {
 		return roundsField;
 	}
-	
+
 	public TextField getGamesField() {
 		return gamesField;
 	}
@@ -255,7 +255,7 @@ public class EnvironmentView {
 	public Button getAddButton() {
 		return addButton;
 	}
-	
+
 	public Button getClearButton() {
 		return clearButton;
 	}

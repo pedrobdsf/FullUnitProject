@@ -22,10 +22,9 @@ public class Agent {
 	private Strategy strat;
 	private int totalUtility;
 	private int gameUtility;
-	private int avgUtility = 0;
-	private int newAvgUtility;
-	private int utilityThreshold = 2;
-	private Map<Agent, Integer> knownAgents = new HashMap<>();
+	private double avgUtility = 0;
+	private double utilityThreshold = 1;
+	private Map<Agent, Double> knownAgents = new HashMap<>();
 	private List<Agent> acceptedAgents = new ArrayList<>();
 	private Statistics stats = new Statistics();
 
@@ -58,37 +57,21 @@ public class Agent {
 		return gameUtility;
 	}
 
-	public int getAvgUtility() {
+	public double getAvgUtility() {
 		return avgUtility;
 	}
 
-	public void setAvgUtility(int avgUtility) {
-		this.avgUtility = avgUtility;
-	}
-
-	public int getNewAvgUtility() {
-		return newAvgUtility;
-	}
-
-	public void setNewAvgUtility() {
-		Collection<Integer> utilities = knownAgents.values();
+	public void setAvgUtility() {
+		Collection<Double> utilities = knownAgents.values();
 		int temp = 0;
-		for (Integer utility : utilities) {
+		for (Double utility : utilities) {
 			temp += utility;
 		}
-		newAvgUtility = temp / knownAgents.size();
+		avgUtility = temp / knownAgents.size();
 	}
 
-	public boolean isInUtilityThreshold(int avgUtility) {
-		if (utilityThreshold > 0) {
-			return avgUtility >= utilityThreshold;
-		} else {
-			return avgUtility > utilityThreshold;
-		}
-	}
-
-	public void decAvgUtilityThreshold() {
-		utilityThreshold--;
+	public boolean isInUtilityThreshold(double avgUtility) {
+		return avgUtility >= utilityThreshold;
 	}
 
 	public List<Agent> getAcceptedAgents() {
@@ -99,7 +82,7 @@ public class Agent {
 		strat.setOpponent(opponent.getStrat());
 	}
 
-	public void mapOpponent(Agent opponent, int utility) {
+	public void mapOpponent(Agent opponent, double utility) {
 		knownAgents.put(opponent, utility);
 		stats.mapAgent(opponent, gameUtility);
 	}

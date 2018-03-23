@@ -45,7 +45,7 @@ public class Strategy {
 	public String getLastChoice() {
 		return lastChoice;
 	}
-	
+
 	public String getName() {
 		return name;
 	}

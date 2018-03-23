@@ -5,7 +5,6 @@ package tournament;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 
 import agent.Agent;
 import agent.AgentManager;
@@ -15,7 +14,7 @@ import agent.GameMatrix;
  * @author Pedro Freire
  *
  */
-public class TournamentManager extends Observable {
+public class TournamentManager {
 
 	private AgentManager agentManager = new AgentManager();
 	private GameMatrix matrix = new GameMatrix();
@@ -39,7 +38,6 @@ public class TournamentManager extends Observable {
 						agent1.getStrat().choose();
 						agent2.getStrat().choose();
 						matrix.evaluate(agent1.getStrat().getCurrChoice(), agent2.getStrat().getCurrChoice());
-						matrix.printRound();
 						agent1.incUtility(matrix.getResult1());
 						agent2.incUtility(matrix.getResult2());
 						agent1.getStrat().setLastChoice();
@@ -49,13 +47,12 @@ public class TournamentManager extends Observable {
 					agent2.mapOpponent(agent1, agent2.getGameUtility() / numOfRounds);
 					agent1.reset();
 					agent2.reset();
-					System.out.println();
 				}
 			}
 			count++;
 		}
 	}
-	
+
 	public void clearAgentList() {
 		agentList.clear();
 	}

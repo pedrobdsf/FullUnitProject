@@ -127,7 +127,7 @@
                         <Insets left="30.0" right="30.0" top="30.0" />
                      </VBox.margin>
 						</Label>
-						<TextField fx:id="roundsField" prefHeight="77.0" prefWidth="632.0">
+						<TextField fx:id="roundsField" prefHeight="77.0" prefWidth="632.0" text="1">
                      <VBox.margin>
                         <Insets bottom="60.0" left="30.0" right="30.0" />
                      </VBox.margin>

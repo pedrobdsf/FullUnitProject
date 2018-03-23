@@ -3,9 +3,6 @@
  */
 package environment;
 
-import java.util.Observable;
-import java.util.Observer;
-
 import driver.Loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -19,7 +16,7 @@ import view.StatisticsView;
  * @author Pedro Freire
  *
  */
-public class EnvironmentController implements Observer, EventHandler<ActionEvent> {
+public class EnvironmentController implements EventHandler<ActionEvent> {
 
 	private Loader loader = new Loader();
 	private EnvironmentView view;
@@ -29,7 +26,6 @@ public class EnvironmentController implements Observer, EventHandler<ActionEvent
 		this.manager = manager;
 		this.view = view;
 		view.addHandlers(this);
-		manager.addObserver(this);
 	}
 
 	@Override
@@ -82,18 +78,11 @@ public class EnvironmentController implements Observer, EventHandler<ActionEvent
 		}
 		for (int index = 0; index < view.getDeleteList().size(); index++) {
 			if (event.getSource() == view.getDeleteList().get(index)) {
-				System.out.println("pressed");
 				try {
 					view.deleteAgent(index);
-				} catch (Exception e) {}
+				} catch (Exception e) {
+				}
 			}
 		}
 	}
-
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
