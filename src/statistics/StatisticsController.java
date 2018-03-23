@@ -4,7 +4,6 @@
 package statistics;
 
 import agent.Agent;
-import driver.Loader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -16,7 +15,6 @@ import view.StatisticsView;
  */
 public class StatisticsController implements EventHandler<ActionEvent> {
 
-	private Loader loader = new Loader();
 	private StatisticsView view;
 	private StatisticsManager manager = new StatisticsManager();
 	private Stage stage;
@@ -32,21 +30,7 @@ public class StatisticsController implements EventHandler<ActionEvent> {
 	}
 
 	@Override
-	public void handle(ActionEvent event){
-		if (event.getSource() == view.getPrevButton()) {
-			try {
-				loader.changeDisplay("Statistics", stage);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		if (event.getSource() == view.getNextButton()) {
-			try {
-				loader.changeDisplay("Statistics", stage);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+	public void handle(ActionEvent event) {
 		if (event.getSource() == view.getExitButton()) {
 			stage.close();
 		}

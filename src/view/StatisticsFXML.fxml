@@ -101,26 +101,7 @@
                         </Button>
                      </children>
                   </VBox>
-                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Button fx:id="prevButton" mnemonicParsing="false" text="&lt;">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="30.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="nextButton" mnemonicParsing="false" text="&gt;">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets bottom="20.0" left="10.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="200.0" />
                </children>
             </GridPane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

@@ -40,15 +40,15 @@ public class MainMenuView {
 	public Button getOneVOneButton() {
 		return oneVOneButton;
 	}
-	
+
 	public Button getTournamentButton() {
 		return tournamentButton;
 	}
-	
+
 	public Button getEnvironmentButton() {
 		return environmentButton;
 	}
-	
+
 	public Button getInfoButton() {
 		return infoButton;
 	}

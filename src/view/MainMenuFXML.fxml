@@ -27,13 +27,20 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="infoButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="74.0" text="Info">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
+                  <Button fx:id="infoButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 50;">
                      <VBox.margin>
                         <Insets left="15.0" top="15.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../res/question_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
                </children>
             </VBox>

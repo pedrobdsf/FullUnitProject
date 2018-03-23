@@ -34,10 +34,6 @@ public class StatisticsView {
 	@FXML
 	private Label totalUtility;
 	@FXML
-	private Button prevButton;
-	@FXML
-	private Button nextButton;
-	@FXML
 	private Button exitButton;
 
 	@FXML
@@ -68,21 +64,11 @@ public class StatisticsView {
 	}
 
 	public void addHandlers(EventHandler<ActionEvent> controller) {
-		prevButton.setOnAction(controller);
-		nextButton.setOnAction(controller);
 		exitButton.setOnAction(controller);
 	}
-	
+
 	public void setAgentNumber(Integer agentNumber) {
 		this.agentNumber.setText(agentNumber.toString());
-	}
-
-	public Button getNextButton() {
-		return nextButton;
-	}
-
-	public Button getPrevButton() {
-		return prevButton;
 	}
 
 	public Button getExitButton() {
