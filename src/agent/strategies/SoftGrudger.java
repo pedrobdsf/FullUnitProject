@@ -4,6 +4,8 @@
 package agent.strategies;
 
 /**
+ * An object containing the algorithm to perform the Soft Grudger strategy.
+ * 
  * @author Pedro Freire
  *
  */
@@ -12,6 +14,10 @@ public class SoftGrudger extends Strategy {
 	private int defect;
 	private int coop;
 
+	/**
+	 * Initialises the object, the variables used to perform the algorithm and
+	 * attributes the strategy its name.
+	 */
 	public SoftGrudger() {
 		super();
 		name = "Soft Grudger";

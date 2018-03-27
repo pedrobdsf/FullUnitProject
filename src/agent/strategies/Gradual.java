@@ -4,6 +4,8 @@
 package agent.strategies;
 
 /**
+ * An object containing the algorithm to perform the Gradual strategy.
+ * 
  * @author Pedro Freire
  *
  */
@@ -13,6 +15,10 @@ public class Gradual extends Strategy {
 	private int defect;
 	private int coop;
 
+	/**
+	 * Initialises the object, the variables used to perform the algorithm and
+	 * attributes the strategy its name.
+	 */
 	public Gradual() {
 		super();
 		name = "Gradual";

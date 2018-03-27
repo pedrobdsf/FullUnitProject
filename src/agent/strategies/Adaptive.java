@@ -6,6 +6,8 @@ package agent.strategies;
 import agent.GameMatrix;
 
 /**
+ * An object containing the algorithm to perform the Adaptive strategy.
+ * 
  * @author Pedro Freire
  *
  */
@@ -21,6 +23,10 @@ public class Adaptive extends Strategy {
 	private int defect;
 	private int coop;
 
+	/**
+	 * Initialises the object, the variables used to perform the algorithm and
+	 * attributes the strategy its name.
+	 */
 	public Adaptive() {
 		super();
 		name = "Adaptive";

@@ -15,11 +15,22 @@ import agent.strategies.TitForTat;
 import agent.strategies.TitForTwoTats;
 
 /**
+ * A class that contains functionalities that are required by multiple
+ * Prisoner's Dilemma game modes.
+ * 
  * @author Pedro Freire
  *
  */
 public class AgentManager {
 
+	/**
+	 * Recognises the name of a strategy and initialises an agent with the desired
+	 * strategy.
+	 * 
+	 * @param strat
+	 *          - the name of a strategy
+	 * @return an initialised agent with the desired strategy attributed
+	 */
 	public Agent stringToAgent(String strat) {
 		switch (strat) {
 		case "Adaptive":

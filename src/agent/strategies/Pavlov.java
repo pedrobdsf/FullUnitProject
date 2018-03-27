@@ -6,6 +6,8 @@ package agent.strategies;
 import agent.GameMatrix;
 
 /**
+ * An object containing the algorithm to perform the Pavlov strategy.
+ * 
  * @author Pedro Freire
  *
  */
@@ -13,6 +15,9 @@ public class Pavlov extends Strategy {
 
 	GameMatrix matrix = new GameMatrix();
 
+	/**
+	 * Initialises the object and attributes the strategy its name.
+	 */
 	public Pavlov() {
 		super();
 		name = "Pavlov";
