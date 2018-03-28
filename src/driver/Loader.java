@@ -22,6 +22,8 @@ import view.OneVOneView;
 import view.TournamentView;
 
 /**
+ * The class that loads every GUI with its respective controller and model.
+ * 
  * @author Pedro Freire
  *
  */
@@ -47,12 +49,29 @@ public class Loader extends Application {
 		stage.show();
 	}
 
+	/**
+	 * Changes the current stage to display a new GUI.
+	 * 
+	 * @param name
+	 *          - the name of the GUI
+	 * @param stage
+	 *          - the stage in which the GUI will open
+	 * @throws Exception
+	 */
 	public void changeDisplay(String name, Stage stage) throws Exception {
 		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
 		handleController(name);
 		stage.getScene().setRoot(pane);
 	}
 
+	/**
+	 * Creates a new stage to display a new GUI.
+	 * 
+	 * @param name
+	 *          - the name of the GUI
+	 * @return the new stage containing the initialised GUI
+	 * @throws Exception
+	 */
 	public Stage newDisplay(String name) throws Exception {
 		Stage newStage = new Stage();
 		Parent pane = FXMLLoader.load(getClass().getResource("/view/" + name + "FXML.fxml"));
@@ -61,6 +80,12 @@ public class Loader extends Application {
 		return newStage;
 	}
 
+	/**
+	 * Initialises the corresponding controller/model to the GUI.
+	 * 
+	 * @param name
+	 *          - The name of the GUI
+	 */
 	private void handleController(String name) {
 		if (name.equals("MainMenu")) {
 			new MainMenuController(MainMenuView.getInstance());
@@ -79,6 +104,9 @@ public class Loader extends Application {
 		}
 	}
 
+	/**
+	 * @return the main stage of the application
+	 */
 	public Stage getStage() {
 		return stage;
 	}

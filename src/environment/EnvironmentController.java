@@ -13,6 +13,8 @@ import view.EnvironmentView;
 import view.StatisticsView;
 
 /**
+ * The controller class of the Environment.
+ * 
  * @author Pedro Freire
  *
  */
@@ -22,6 +24,10 @@ public class EnvironmentController implements EventHandler<ActionEvent> {
 	private EnvironmentView view;
 	private EnvironmentManager manager;
 
+	/**
+	 * @param manager - the model of the environment
+	 * @param view - the view of the environment
+	 */
 	public EnvironmentController(EnvironmentManager manager, EnvironmentView view) {
 		this.manager = manager;
 		this.view = view;

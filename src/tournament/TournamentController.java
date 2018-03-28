@@ -13,6 +13,8 @@ import view.StatisticsView;
 import view.TournamentView;
 
 /**
+ * The controller class of the Tournament.
+ * 
  * @author Pedro Freire
  *
  */
@@ -22,6 +24,12 @@ public class TournamentController implements EventHandler<ActionEvent> {
 	private TournamentView view;
 	private TournamentManager manager;
 
+	/**
+	 * @param manager
+	 *          - the model of the Tournament
+	 * @param view
+	 *          - the view of the Tournament
+	 */
 	public TournamentController(TournamentManager manager, TournamentView view) {
 		this.manager = manager;
 		this.view = view;

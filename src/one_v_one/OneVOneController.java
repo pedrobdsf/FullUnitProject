@@ -9,6 +9,8 @@ import javafx.event.EventHandler;
 import view.OneVOneView;
 
 /**
+ * The controller class for the One V One game mode.
+ * 
  * @author Pedro Freire
  *
  */
@@ -18,6 +20,12 @@ public class OneVOneController implements EventHandler<ActionEvent> {
 	private OneVOneView view;
 	private OneVOneManager manager;
 
+	/**
+	 * @param manager
+	 *          - the manager of the One V One mode
+	 * @param view
+	 *          - the view of the One V One mode
+	 */
 	public OneVOneController(OneVOneManager manager, OneVOneView view) {
 		this.manager = manager;
 		this.view = view;
@@ -41,6 +49,9 @@ public class OneVOneController implements EventHandler<ActionEvent> {
 		}
 	}
 
+	/**
+	 * @return the view of the One V One mode
+	 */
 	public OneVOneView getView() {
 		return view;
 	}

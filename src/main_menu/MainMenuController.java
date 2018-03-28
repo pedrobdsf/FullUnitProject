@@ -11,6 +11,8 @@ import javafx.event.EventHandler;
 import view.MainMenuView;
 
 /**
+ * The controller class of the Main Menu.
+ * 
  * @author Pedro Freire
  *
  */
@@ -19,6 +21,10 @@ public class MainMenuController implements EventHandler<ActionEvent> {
 	private Loader loader = new Loader();
 	private MainMenuView view;
 
+	/**
+	 * @param view
+	 *          - the view of the main menu
+	 */
 	public MainMenuController(MainMenuView view) {
 		this.view = view;
 		view.addHandlers(this);

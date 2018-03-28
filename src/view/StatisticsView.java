@@ -36,11 +36,20 @@ public class StatisticsView {
 	@FXML
 	private Button exitButton;
 
+	/**
+	 * Initialises the view.
+	 */
 	@FXML
 	public void initialize() {
 		instance = this;
 	}
 
+	/**
+	 * Initialises pie chart of games played.
+	 * 
+	 * @param map
+	 *          - the map filled with statistics of games played
+	 */
 	public void initGamesPlayedChart(Map<String, Integer> map) {
 		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
 		Integer totalGames = 0;
@@ -52,6 +61,12 @@ public class StatisticsView {
 		this.totalGames.setText(totalGames.toString());
 	}
 
+	/**
+	 * Initialises pie chart of utility gain.
+	 * 
+	 * @param map
+	 *          - the map filled with statistics of utility gain
+	 */
 	public void initUtilityGainedChart(Map<String, Integer> map) {
 		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
 		Integer totalUtility = 0;
@@ -63,18 +78,34 @@ public class StatisticsView {
 		this.totalUtility.setText(totalUtility.toString());
 	}
 
+	/**
+	 * Adds listeners to the controller.
+	 * 
+	 * @param controller
+	 *          - the controller of the statistics
+	 */
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		exitButton.setOnAction(controller);
 	}
 
+	/**
+	 * @param agentNumber
+	 *          - the ID of the agent
+	 */
 	public void setAgentNumber(Integer agentNumber) {
 		this.agentNumber.setText(agentNumber.toString());
 	}
 
+	/**
+	 * @return the exit button
+	 */
 	public Button getExitButton() {
 		return exitButton;
 	}
 
+	/**
+	 * @return an instance of this class
+	 */
 	public static StatisticsView getInstance() {
 		return instance;
 	}

@@ -11,6 +11,8 @@ import agent.AgentManager;
 import agent.GameMatrix;
 
 /**
+ * The model class of the Tournament.
+ * 
  * @author Pedro Freire
  *
  */
@@ -20,6 +22,12 @@ public class TournamentManager {
 	private GameMatrix matrix = new GameMatrix();
 	private List<Agent> agentList = new ArrayList<>();;
 
+	/**
+	 * @param stratList
+	 *          - the list of strategies in the tournament
+	 * @param numOfRounds
+	 *          - the number of rounds in each match
+	 */
 	public void runGame(List<String> stratList, int numOfRounds) {
 		int idx = 0;
 		for (String strat : stratList) {
@@ -53,10 +61,16 @@ public class TournamentManager {
 		}
 	}
 
+	/**
+	 * Removes all agents from the list.
+	 */
 	public void clearAgentList() {
 		agentList.clear();
 	}
 
+	/**
+	 * @return the list of agents in the tournament
+	 */
 	public List<Agent> getAgentList() {
 		return agentList;
 	}

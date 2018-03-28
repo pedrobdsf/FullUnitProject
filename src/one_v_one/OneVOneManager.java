@@ -10,6 +10,8 @@ import agent.AgentManager;
 import agent.GameMatrix;
 
 /**
+ * The model class for the One V One game mode.
+ * 
  * @author Pedro Freire
  *
  */
@@ -20,6 +22,16 @@ public class OneVOneManager {
 	private Agent agent1;
 	private Agent agent2;
 
+	/**
+	 * Runs a game between two agents.
+	 * 
+	 * @param strat1
+	 *          - the first strategy used for the game
+	 * @param strat2
+	 *          - the second strategy used for the game
+	 * @param numOfRounds
+	 *          - the number of rounds in the game
+	 */
 	public void runGame(String strat1, String strat2, int numOfRounds) {
 		agent1 = agentManager.stringToAgent(strat1);
 		agent2 = agentManager.stringToAgent(strat2);
@@ -42,10 +54,16 @@ public class OneVOneManager {
 		}
 	}
 
+	/**
+	 * @return the first agent
+	 */
 	public Agent getAgent1() {
 		return agent1;
 	}
 
+	/**
+	 * @return the second agent
+	 */
 	public Agent getAgent2() {
 		return agent2;
 	}

@@ -63,6 +63,10 @@ public class EnvironmentView {
 	private List<Button> statsList;
 	private List<Button> deleteList;
 
+	/**
+	 * Initialises the view, the choice box of agents and the list of agents and
+	 * its components.
+	 */
 	@FXML
 	public void initialize() {
 		instance = this;
@@ -78,6 +82,12 @@ public class EnvironmentView {
 		deleteList = new ArrayList<>();
 	}
 
+	/**
+	 * Adds listeners to the controller.
+	 * 
+	 * @param controller
+	 *          - the controller of the environment
+	 */
 	public void addHandlers(EventHandler<ActionEvent> controller) {
 		playButton.setOnAction(controller);
 		plusButton.setOnAction(controller);
@@ -87,12 +97,28 @@ public class EnvironmentView {
 		backButton.setOnAction(controller);
 	}
 
+	/**
+	 * Adds an agent with the specified strategy to the list of agents
+	 * 
+	 * @param strat
+	 *          - name of the strategy
+	 */
 	public void addAgentToList(String strat) {
 		int id = agentsBoxList.size() + 1;
 		agentsBoxList.add(addAgent(String.valueOf(id), strat));
 		agentsBoxListBox.getChildren().add(agentsBoxList.get(id - 1));
 	}
 
+	/**
+	 * Creates an agent and all of its components so it can be added to the list
+	 * in the GUI.
+	 * 
+	 * @param id
+	 *          - the id of the agent
+	 * @param strat
+	 *          - the strategy of the agent
+	 * @return HBox with all of the agent components
+	 */
 	private HBox addAgent(String id, String strat) {
 		HBox agent = new HBox();
 		Label idLb = new Label(id);
@@ -127,20 +153,35 @@ public class EnvironmentView {
 		return agent;
 	}
 
+	/**
+	 * Adds listeners for the statistics/delete buttons to the controller.
+	 * 
+	 * @param controller
+	 *          - the controller of the environment
+	 */
 	public void addButtonHandler(EventHandler<ActionEvent> controller) {
 		int index = agentsList.size() - 1;
 		statsList.get(index).setOnAction(controller);
 		deleteList.get(index).setOnAction(controller);
 	}
 
+	/**
+	 * @return the name the strategy in the choice box
+	 */
 	public String getAgentSelect() {
 		return agentSelect.getValue();
 	}
 
+	/**
+	 * @return the list of agents
+	 */
 	public List<String> getAgentsList() {
 		return agentsList;
 	}
 
+	/**
+	 * @return the list of results
+	 */
 	public List<String> getResultsList() {
 		List<String> list = new ArrayList<>();
 		for (TextField tf : resultsList) {
@@ -149,18 +190,35 @@ public class EnvironmentView {
 		return list;
 	}
 
+	/**
+	 * @param result
+	 *          - the result for a specific agent
+	 * @param index
+	 *          - the index of the agent on the list
+	 */
 	public void setResultField(String result, int index) {
 		resultsList.get(index).setText(result);
 	}
 
+	/**
+	 * @return the list of statistics buttons
+	 */
 	public List<Button> getStatsList() {
 		return statsList;
 	}
 
+	/**
+	 * @return the list of delete buttons
+	 */
 	public List<Button> getDeleteList() {
 		return deleteList;
 	}
 
+	/**
+	 * @param index
+	 *          - index of the agent on the list
+	 * @throws Exception
+	 */
 	public void deleteAgent(int index) throws Exception {
 		agentsBoxListBox.getChildren().remove(index);
 		agentsBoxList.remove(index);
@@ -182,6 +240,9 @@ public class EnvironmentView {
 		}
 	}
 
+	/**
+	 * Clears the list agents and its components.
+	 */
 	public void clearAgentList() {
 		agentsBoxListBox.getChildren().clear();
 		agentsBoxList.clear();
@@ -192,6 +253,9 @@ public class EnvironmentView {
 		deleteList.clear();
 	}
 
+	/**
+	 * Clears all the results.
+	 */
 	public void clearResultField() {
 		if (resultsList.size() > 0) {
 			for (TextField tf : resultsList) {
@@ -200,10 +264,17 @@ public class EnvironmentView {
 		}
 	}
 
+	/**
+	 * Evaluates the number of agents on the list and sets it to a text field.
+	 */
 	public void setTotalAgents() {
 		totalAgentsField.setText(String.valueOf(agentsList.size()));
 	}
 
+	/**
+	 * Evaluates the amount of utility gained over all agents and sets it to a
+	 * text field.
+	 */
 	public void setTotalUtility() {
 		int value = 0;
 		for (String text : getResultsList()) {
@@ -214,24 +285,39 @@ public class EnvironmentView {
 		totalUtilityField.setText(String.valueOf(value));
 	}
 
+	/**
+	 * @return the text field for number of rounds
+	 */
 	public TextField getRoundsField() {
 		return roundsField;
 	}
 
+	/**
+	 * @return the text field for number of games
+	 */
 	public TextField getGamesField() {
 		return gamesField;
 	}
 
+	/**
+	 * @return the text field for number of agents to add to list
+	 */
 	public TextField getAddField() {
 		return addField;
 	}
 
+	/**
+	 * Increments the value in the add agent text field.
+	 */
 	public void incAddField() {
 		int temp = Integer.valueOf(addField.getText());
 		temp++;
 		addField.setText(String.valueOf(temp));
 	}
 
+	/**
+	 * Decrements the value in the add agent text field.
+	 */
 	public void decAddField() {
 		int temp = Integer.valueOf(addField.getText());
 		if (temp > 1) {
@@ -240,30 +326,51 @@ public class EnvironmentView {
 		}
 	}
 
+	/**
+	 * @return the play button
+	 */
 	public Button getPlayButton() {
 		return playButton;
 	}
 
+	/**
+	 * @return the plus button
+	 */
 	public Button getPlusButton() {
 		return plusButton;
 	}
 
+	/**
+	 * @return the minus button
+	 */
 	public Button getMinusButton() {
 		return minusButton;
 	}
 
+	/**
+	 * @return the add button
+	 */
 	public Button getAddButton() {
 		return addButton;
 	}
 
+	/**
+	 * @return the clear all button
+	 */
 	public Button getClearButton() {
 		return clearButton;
 	}
 
+	/**
+	 * @return the back button
+	 */
 	public Button getBackButton() {
 		return backButton;
 	}
 
+	/**
+	 * @return an instance of this class
+	 */
 	public static EnvironmentView getInstance() {
 		return instance;
 	}
