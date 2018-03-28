@@ -58,7 +58,6 @@ public class Adaptive extends Strategy {
 			currChoice = "C";
 			coopCount++;
 		} else if (defect == 0 && coop == 0) {
-			System.out.println(avgDefectScore + " " + avgCoopScore);
 			if (avgDefectScore > avgCoopScore) {
 				currChoice = "D";
 				defectCount++;
